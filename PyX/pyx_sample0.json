@@ -1,0 +1,16 @@
+[
+    {
+        "id": "pyx_0",
+        "nl": "Write a solution to the following coding problem:\nYou are tasked with creating a Python function that processes a list of dictionaries representing users' data. The function should filter out users based on specific criteria and return a list of dictionaries containing only the relevant user information. Each user dictionary contains 'name', 'age', 'gender', and 'location' keys. The function should filter users based on the following conditions:\n1. Include users who are at least 18 years old.\n2. Include users who are female.\n3. Include users who are located in 'Europe'.\n\nWrite a function `filter_users(users_data)` that takes a list of user dictionaries as input and returns a filtered list of user dictionaries based on the specified conditions.\n\nExample input:\n```python\nusers_data = [\n    {'name': 'Alice', 'age': 25, 'gender': 'female', 'location': 'Europe'},\n    {'name': 'Bob', 'age': 30, 'gender': 'male', 'location': 'Asia'},\n    {'name': 'Charlie', 'age': 20, 'gender': 'male', 'location': 'Europe'},\n    {'name': 'Diana', 'age': 22, 'gender': 'female', 'location': 'North America'}\n]\n```\n\nExpected output:\n```python\nfiltered_users = [\n    {'name': 'Alice', 'age': 25, 'gender': 'female', 'location': 'Europe'},\n    {'name': 'Charlie', 'age': 20, 'gender': 'male', 'location': 'Europe'}\n]\n```",
+        "fwd_mnl": "",
+        "bwd_mnl": "",
+        "response": "\n```python\ndef filter_users(users_data):\n    filtered_users = []\n    \n    for user in users_data:\n        if user['age'] >= 18 and user['gender'] == 'female' and user['location'] == 'Europe':\n            filtered_users.append(user)\n    \n    return filtered_users\n```\n"
+    },
+    {
+        "id": "pyx_1",
+        "nl": "Write a solution to the following coding problem:\nYou are given a list of integers representing the scores of students in a class. Your task is to write a Python function that returns the top three unique scores in descending order. If there are fewer than three unique scores, return all unique scores in descending order.\n\nFunction signature: `def top_three_scores(scores: List[int]) -> List[int]:`\n\n**Input:**\n- A list of integers `scores` (1 <= len(scores) <= 10^4) representing the scores of students in the class. Each score is an integer between 0 and 100.\n\n**Output:**\n- Return a list of integers representing the top three unique scores in descending order.\n\n**Example:**\n```\nInput: scores = [85, 92, 78, 85, 92, 100, 78, 90]\nOutput: [100, 92, 90]\n\nInput: scores = [75, 75, 75, 75, 75]\nOutput: [75]\n```",
+        "fwd_mnl": "",
+        "bwd_mnl": "",
+        "response": "\n```python\nfrom typing import List\n\ndef top_three_scores(scores: List[int]) -> List[int]:\n    # Step 1: Get unique scores\n    unique_scores = set(scores)\n    \n    # Step 2: Sort the unique scores in descending order\n    sorted_scores = sorted(unique_scores, reverse=True)\n    \n    # Step 3: Return the top three scores or fewer if not enough unique scores\n    return sorted_scores[:3]\n```\n"
+    }
+]
