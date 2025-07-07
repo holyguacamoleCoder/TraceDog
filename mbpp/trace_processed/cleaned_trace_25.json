@@ -1,0 +1,5456 @@
+[
+  {
+    "code": "def extract_singly(test_list):\r\n  res = []\r\n  temp = set()\r\n  for inner in test_list:\r\n    for ele in inner:\r\n      if not ele in temp:\r\n        temp.add(ele)\r\n        res.append(ele)\r\n  return (res)",
+    "entry_point": "extract_singly",
+    "input": [
+      [
+        "(7, 8, 9)",
+        "(10, 11, 12)",
+        "(10, 11)"
+      ]
+    ],
+    "output": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "test_list": [
+            "(7, 8, 9)",
+            "(10, 11, 12)",
+            "(10, 11)"
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "res": []
+        }
+      },
+      {
+        "line": 4,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "inner": "(7, 8, 9)"
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 7
+        }
+      },
+      {
+        "line": 8,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "res[0]": 7
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 8
+        }
+      },
+      {
+        "line": 8,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "res[1]": 8
+        }
+      },
+      {
+        "line": 5,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 9
+        }
+      },
+      {
+        "line": 8,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "res[2]": 9
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "inner[0]": 10,
+          "inner[2]": 12,
+          "inner[1]": 11
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 10
+        }
+      },
+      {
+        "line": 8,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "res[3]": 10
+        }
+      },
+      {
+        "line": 5,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 11
+        }
+      },
+      {
+        "line": 8,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "res[4]": 11
+        }
+      },
+      {
+        "line": 5,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 12
+        }
+      },
+      {
+        "line": 8,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "res[5]": 12
+        }
+      },
+      {
+        "line": 4,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "inner": "(10, 11)"
+        }
+      },
+      {
+        "line": 5,
+        "step": "18~19",
+        "action": "LOOP",
+        "vars": {
+          "ele": "10→11"
+        }
+      },
+      {
+        "line": 9,
+        "step": 20,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        }
+      }
+    ],
+    "id": 416,
+    "task_id": 140,
+    "exist_function": [
+      "extract_singly"
+    ]
+  },
+  {
+    "code": "def pancake_sort(nums):\r\n    arr_len = len(nums)\r\n    while arr_len > 1:\r\n        mi = nums.index(max(nums[0:arr_len]))\r\n        nums = nums[mi::-1] + nums[mi+1:len(nums)]\r\n        nums = nums[arr_len-1::-1] + nums[arr_len:len(nums)]\r\n        arr_len -= 1\r\n    return nums",
+    "entry_point": "pancake_sort",
+    "input": [
+      [
+        15,
+        79,
+        25,
+        38,
+        69
+      ]
+    ],
+    "output": [
+      15,
+      25,
+      38,
+      69,
+      79
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "nums": [
+            15,
+            79,
+            25,
+            38,
+            69
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[0]": 79,
+          "nums[1]": 15
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[3]": 15,
+          "nums[0]": 69,
+          "nums[1]": 38,
+          "nums[4]": 79
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[3]": 69,
+          "nums[2]": 38,
+          "nums[0]": 15,
+          "nums[1]": 25
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[2]": 15,
+          "nums[0]": 38
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[2]": 38,
+          "nums[0]": 15
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[0]": 25,
+          "nums[1]": 15
+        }
+      },
+      {
+        "line": 6,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[0]": 15,
+          "nums[1]": 25
+        }
+      },
+      {
+        "line": 7,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 18,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            15,
+            25,
+            38,
+            69,
+            79
+          ]
+        }
+      }
+    ],
+    "id": 417,
+    "task_id": 141,
+    "exist_function": [
+      "pancake_sort"
+    ]
+  },
+  {
+    "code": "def pancake_sort(nums):\r\n    arr_len = len(nums)\r\n    while arr_len > 1:\r\n        mi = nums.index(max(nums[0:arr_len]))\r\n        nums = nums[mi::-1] + nums[mi+1:len(nums)]\r\n        nums = nums[arr_len-1::-1] + nums[arr_len:len(nums)]\r\n        arr_len -= 1\r\n    return nums",
+    "entry_point": "pancake_sort",
+    "input": [
+      [
+        98,
+        12,
+        54,
+        36,
+        85
+      ]
+    ],
+    "output": [
+      12,
+      36,
+      54,
+      85,
+      98
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "nums": [
+            98,
+            12,
+            54,
+            36,
+            85
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[3]": 12,
+          "nums[0]": 85,
+          "nums[1]": 36,
+          "nums[4]": 98
+        }
+      },
+      {
+        "line": 7,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 4
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[3]": 85,
+          "nums[2]": 36,
+          "nums[0]": 12,
+          "nums[1]": 54
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[0]": 54,
+          "nums[1]": 12
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[2]": 54,
+          "nums[0]": 36
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[0]": 12,
+          "nums[1]": 36
+        }
+      },
+      {
+        "line": 7,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 15,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            12,
+            36,
+            54,
+            85,
+            98
+          ]
+        }
+      }
+    ],
+    "id": 418,
+    "task_id": 141,
+    "exist_function": [
+      "pancake_sort"
+    ]
+  },
+  {
+    "code": "def pancake_sort(nums):\r\n    arr_len = len(nums)\r\n    while arr_len > 1:\r\n        mi = nums.index(max(nums[0:arr_len]))\r\n        nums = nums[mi::-1] + nums[mi+1:len(nums)]\r\n        nums = nums[arr_len-1::-1] + nums[arr_len:len(nums)]\r\n        arr_len -= 1\r\n    return nums",
+    "entry_point": "pancake_sort",
+    "input": [
+      [
+        41,
+        42,
+        32,
+        12,
+        23
+      ]
+    ],
+    "output": [
+      12,
+      23,
+      32,
+      41,
+      42
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "nums": [
+            41,
+            42,
+            32,
+            12,
+            23
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[0]": 42,
+          "nums[1]": 41
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[3]": 41,
+          "nums[0]": 23,
+          "nums[1]": 12,
+          "nums[4]": 42
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[3]": 23,
+          "nums[2]": 12,
+          "nums[0]": 41,
+          "nums[1]": 32
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[3]": 41,
+          "nums[2]": 32,
+          "nums[0]": 23,
+          "nums[1]": 12
+        }
+      },
+      {
+        "line": 7,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[2]": 23,
+          "nums[0]": 32
+        }
+      },
+      {
+        "line": 6,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[2]": 32,
+          "nums[0]": 23
+        }
+      },
+      {
+        "line": 7,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "mi": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "nums[0]": 12,
+          "nums[1]": 23
+        }
+      },
+      {
+        "line": 7,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "arr_len": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 18,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            12,
+            23,
+            32,
+            41,
+            42
+          ]
+        }
+      }
+    ],
+    "id": 419,
+    "task_id": 141,
+    "exist_function": [
+      "pancake_sort"
+    ]
+  },
+  {
+    "code": "def sum_Pairs(arr,n): \r\n    sum = 0\r\n    for i in range(n - 1,-1,-1): \r\n        sum += i*arr[i] - (n-1-i) * arr[i] \r\n    return sum",
+    "entry_point": "sum_Pairs",
+    "input": [
+      [
+        1,
+        8,
+        9,
+        15,
+        16
+      ],
+      5
+    ],
+    "output": 74,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            1,
+            8,
+            9,
+            15,
+            16
+          ],
+          "n": 5
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 64
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 94
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 78
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 74
+        }
+      },
+      {
+        "line": 5,
+        "step": 12,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 74
+        }
+      }
+    ],
+    "id": 426,
+    "task_id": 144,
+    "exist_function": [
+      "sum_Pairs"
+    ]
+  },
+  {
+    "code": "def sum_Pairs(arr,n): \r\n    sum = 0\r\n    for i in range(n - 1,-1,-1): \r\n        sum += i*arr[i] - (n-1-i) * arr[i] \r\n    return sum",
+    "entry_point": "sum_Pairs",
+    "input": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      4
+    ],
+    "output": 10,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "n": 4
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 12
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 15
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 13
+        }
+      },
+      {
+        "line": 3,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 10
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 10
+        }
+      }
+    ],
+    "id": 427,
+    "task_id": 144,
+    "exist_function": [
+      "sum_Pairs"
+    ]
+  },
+  {
+    "code": "def sum_Pairs(arr,n): \r\n    sum = 0\r\n    for i in range(n - 1,-1,-1): \r\n        sum += i*arr[i] - (n-1-i) * arr[i] \r\n    return sum",
+    "entry_point": "sum_Pairs",
+    "input": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        11,
+        14
+      ],
+      9
+    ],
+    "output": 188,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            9,
+            11,
+            14
+          ],
+          "n": 9
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 8
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 112
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 7
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 178
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 214
+        }
+      },
+      {
+        "line": 3,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 228
+        }
+      },
+      {
+        "line": 3,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 220
+        }
+      },
+      {
+        "line": 3,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 208
+        }
+      },
+      {
+        "line": 3,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 196
+        }
+      },
+      {
+        "line": 3,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "sum": 188
+        }
+      },
+      {
+        "line": 5,
+        "step": 20,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 188
+        }
+      }
+    ],
+    "id": 428,
+    "task_id": 144,
+    "exist_function": [
+      "sum_Pairs"
+    ]
+  },
+  {
+    "code": "def max_Abs_Diff(arr,n): \r\n    minEle = arr[0] \r\n    maxEle = arr[0] \r\n    for i in range(1, n): \r\n        minEle = min(minEle,arr[i]) \r\n        maxEle = max(maxEle,arr[i]) \r\n    return (maxEle - minEle)",
+    "entry_point": "max_Abs_Diff",
+    "input": [
+      "(2, 1, 5, 3)",
+      4
+    ],
+    "output": 4,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": "(2, 1, 5, 3)",
+          "n": 4
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "minEle": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "maxEle": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "minEle": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "maxEle": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 4
+        }
+      }
+    ],
+    "id": 429,
+    "task_id": 145,
+    "exist_function": [
+      "max_Abs_Diff"
+    ]
+  },
+  {
+    "code": "def max_Abs_Diff(arr,n): \r\n    minEle = arr[0] \r\n    maxEle = arr[0] \r\n    for i in range(1, n): \r\n        minEle = min(minEle,arr[i]) \r\n        maxEle = max(maxEle,arr[i]) \r\n    return (maxEle - minEle)",
+    "entry_point": "max_Abs_Diff",
+    "input": [
+      "(9, 3, 2, 5, 1)",
+      5
+    ],
+    "output": 8,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": "(9, 3, 2, 5, 1)",
+          "n": 5
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "minEle": 9
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "maxEle": 9
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "minEle": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "minEle": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": "8~9",
+        "action": "LOOP",
+        "vars": {
+          "i": "3→4"
+        }
+      },
+      {
+        "line": 5,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "minEle": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 8
+        }
+      }
+    ],
+    "id": 430,
+    "task_id": 145,
+    "exist_function": [
+      "max_Abs_Diff"
+    ]
+  },
+  {
+    "code": "def max_Abs_Diff(arr,n): \r\n    minEle = arr[0] \r\n    maxEle = arr[0] \r\n    for i in range(1, n): \r\n        minEle = min(minEle,arr[i]) \r\n        maxEle = max(maxEle,arr[i]) \r\n    return (maxEle - minEle)",
+    "entry_point": "max_Abs_Diff",
+    "input": [
+      "(3, 2, 1)",
+      3
+    ],
+    "output": 2,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": "(3, 2, 1)",
+          "n": 3
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "minEle": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "maxEle": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "minEle": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "minEle": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 8,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2
+        }
+      }
+    ],
+    "id": 431,
+    "task_id": 145,
+    "exist_function": [
+      "max_Abs_Diff"
+    ]
+  },
+  {
+    "code": "def max_path_sum(tri, m, n): \r\n\tfor i in range(m-1, -1, -1): \r\n\t\tfor j in range(i+1): \r\n\t\t\tif (tri[i+1][j] > tri[i+1][j+1]): \r\n\t\t\t\ttri[i][j] += tri[i+1][j] \r\n\t\t\telse: \r\n\t\t\t\ttri[i][j] += tri[i+1][j+1] \r\n\treturn tri[0][0]",
+    "entry_point": "max_path_sum",
+    "input": [
+      [
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          9,
+          13,
+          0
+        ],
+        [
+          1,
+          5,
+          3
+        ]
+      ],
+      2,
+      2
+    ],
+    "output": 14,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "tri": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              1,
+              5,
+              3
+            ]
+          ],
+          "m": 2,
+          "n": 2
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "tri[1][0]": 9
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "tri[1][1]": 13
+        }
+      },
+      {
+        "line": 2,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "tri[0][0]": 14
+        }
+      },
+      {
+        "line": 8,
+        "step": 10,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 14
+        }
+      }
+    ],
+    "id": 435,
+    "task_id": 147,
+    "exist_function": [
+      "max_path_sum"
+    ]
+  },
+  {
+    "code": "def max_path_sum(tri, m, n): \r\n\tfor i in range(m-1, -1, -1): \r\n\t\tfor j in range(i+1): \r\n\t\t\tif (tri[i+1][j] > tri[i+1][j+1]): \r\n\t\t\t\ttri[i][j] += tri[i+1][j] \r\n\t\t\telse: \r\n\t\t\t\ttri[i][j] += tri[i+1][j+1] \r\n\treturn tri[0][0]",
+    "entry_point": "max_path_sum",
+    "input": [
+      [
+        [
+          24,
+          0,
+          0
+        ],
+        [
+          11,
+          10,
+          0
+        ],
+        [
+          2,
+          4,
+          6
+        ]
+      ],
+      2,
+      2
+    ],
+    "output": 24,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "tri": [
+            [
+              13,
+              0,
+              0
+            ],
+            [
+              7,
+              4,
+              0
+            ],
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "m": 2,
+          "n": 2
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "tri[1][0]": 11
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "tri[1][1]": 10
+        }
+      },
+      {
+        "line": 2,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "tri[0][0]": 24
+        }
+      },
+      {
+        "line": 8,
+        "step": 10,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 24
+        }
+      }
+    ],
+    "id": 436,
+    "task_id": 147,
+    "exist_function": [
+      "max_path_sum"
+    ]
+  },
+  {
+    "code": "def max_path_sum(tri, m, n): \r\n\tfor i in range(m-1, -1, -1): \r\n\t\tfor j in range(i+1): \r\n\t\t\tif (tri[i+1][j] > tri[i+1][j+1]): \r\n\t\t\t\ttri[i][j] += tri[i+1][j] \r\n\t\t\telse: \r\n\t\t\t\ttri[i][j] += tri[i+1][j+1] \r\n\treturn tri[0][0]",
+    "entry_point": "max_path_sum",
+    "input": [
+      [
+        [
+          53,
+          0,
+          0
+        ],
+        [
+          36,
+          51,
+          0
+        ],
+        [
+          21,
+          25,
+          33
+        ]
+      ],
+      2,
+      2
+    ],
+    "output": 53,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "tri": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              11,
+              18,
+              0
+            ],
+            [
+              21,
+              25,
+              33
+            ]
+          ],
+          "m": 2,
+          "n": 2
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "tri[1][0]": 36
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "tri[1][1]": 51
+        }
+      },
+      {
+        "line": 2,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "tri[0][0]": 53
+        }
+      },
+      {
+        "line": 8,
+        "step": 10,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 53
+        }
+      }
+    ],
+    "id": 437,
+    "task_id": 147,
+    "exist_function": [
+      "max_path_sum"
+    ]
+  },
+  {
+    "code": "def longest_subseq_with_diff_one(arr, n): \r\n\tdp = [1 for i in range(n)] \r\n\tfor i in range(n): \r\n\t\tfor j in range(i): \r\n\t\t\tif ((arr[i] == arr[j]+1) or (arr[i] == arr[j]-1)): \r\n\t\t\t\tdp[i] = max(dp[i], dp[j]+1) \r\n\tresult = 1\r\n\tfor i in range(n): \r\n\t\tif (result < dp[i]): \r\n\t\t\tresult = dp[i] \r\n\treturn result",
+    "entry_point": "longest_subseq_with_diff_one",
+    "input": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        3,
+        2
+      ],
+      7
+    ],
+    "output": 6,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            3,
+            2
+          ],
+          "n": 7
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "dp": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "line": 3,
+        "step": "3~4",
+        "action": "LOOP",
+        "vars": {
+          "i": "0→1"
+        }
+      },
+      {
+        "line": 4,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[1]": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[2]": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": "11~13",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→2"
+        }
+      },
+      {
+        "line": 6,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[3]": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": "16~19",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→3"
+        }
+      },
+      {
+        "line": 6,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[4]": 5
+        }
+      },
+      {
+        "line": 3,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": "22~23",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→1"
+        }
+      },
+      {
+        "line": 6,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[5]": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": "25~26",
+        "action": "LOOP",
+        "vars": {
+          "j": "2→3"
+        }
+      },
+      {
+        "line": 6,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[5]": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[6]": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": "32~33",
+        "action": "LOOP",
+        "vars": {
+          "j": "1→2"
+        }
+      },
+      {
+        "line": 6,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[6]": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": "35~37",
+        "action": "LOOP",
+        "vars": {
+          "j": "3→5"
+        }
+      },
+      {
+        "line": 6,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[6]": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": "40~41",
+        "action": "LOOP",
+        "vars": {
+          "i": "0→1"
+        }
+      },
+      {
+        "line": 10,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 43,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 10,
+        "step": 44,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 10,
+        "step": 46,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 47,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 10,
+        "step": 48,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 5
+        }
+      },
+      {
+        "line": 8,
+        "step": "49~50",
+        "action": "LOOP",
+        "vars": {
+          "i": "5→6"
+        }
+      },
+      {
+        "line": 10,
+        "step": 51,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 6
+        }
+      },
+      {
+        "line": 11,
+        "step": 52,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 6
+        }
+      }
+    ],
+    "id": 441,
+    "task_id": 149,
+    "exist_function": [
+      "longest_subseq_with_diff_one"
+    ]
+  },
+  {
+    "code": "def longest_subseq_with_diff_one(arr, n): \r\n\tdp = [1 for i in range(n)] \r\n\tfor i in range(n): \r\n\t\tfor j in range(i): \r\n\t\t\tif ((arr[i] == arr[j]+1) or (arr[i] == arr[j]-1)): \r\n\t\t\t\tdp[i] = max(dp[i], dp[j]+1) \r\n\tresult = 1\r\n\tfor i in range(n): \r\n\t\tif (result < dp[i]): \r\n\t\t\tresult = dp[i] \r\n\treturn result",
+    "entry_point": "longest_subseq_with_diff_one",
+    "input": [
+      [
+        10,
+        9,
+        4,
+        5,
+        4,
+        8,
+        6
+      ],
+      7
+    ],
+    "output": 3,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            10,
+            9,
+            4,
+            5,
+            4,
+            8,
+            6
+          ],
+          "n": 7
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "dp": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "line": 3,
+        "step": "3~4",
+        "action": "LOOP",
+        "vars": {
+          "i": "0→1"
+        }
+      },
+      {
+        "line": 4,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[1]": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": "10~12",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→2"
+        }
+      },
+      {
+        "line": 6,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[3]": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": "15~18",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→3"
+        }
+      },
+      {
+        "line": 6,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[4]": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": "21~22",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→1"
+        }
+      },
+      {
+        "line": 6,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[5]": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": "24~26",
+        "action": "LOOP",
+        "vars": {
+          "j": "2→4"
+        }
+      },
+      {
+        "line": 3,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": "28~31",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→3"
+        }
+      },
+      {
+        "line": 6,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[6]": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": "33~34",
+        "action": "LOOP",
+        "vars": {
+          "j": "4→5"
+        }
+      },
+      {
+        "line": 7,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": "36~37",
+        "action": "LOOP",
+        "vars": {
+          "i": "0→1"
+        }
+      },
+      {
+        "line": 10,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": "39~41",
+        "action": "LOOP",
+        "vars": {
+          "i": "2→4"
+        }
+      },
+      {
+        "line": 10,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": "43~44",
+        "action": "LOOP",
+        "vars": {
+          "i": "5→6"
+        }
+      },
+      {
+        "line": 11,
+        "step": 45,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 3
+        }
+      }
+    ],
+    "id": 442,
+    "task_id": 149,
+    "exist_function": [
+      "longest_subseq_with_diff_one"
+    ]
+  },
+  {
+    "code": "def longest_subseq_with_diff_one(arr, n): \r\n\tdp = [1 for i in range(n)] \r\n\tfor i in range(n): \r\n\t\tfor j in range(i): \r\n\t\t\tif ((arr[i] == arr[j]+1) or (arr[i] == arr[j]-1)): \r\n\t\t\t\tdp[i] = max(dp[i], dp[j]+1) \r\n\tresult = 1\r\n\tfor i in range(n): \r\n\t\tif (result < dp[i]): \r\n\t\t\tresult = dp[i] \r\n\treturn result",
+    "entry_point": "longest_subseq_with_diff_one",
+    "input": [
+      [
+        1,
+        2,
+        3,
+        2,
+        3,
+        7,
+        2,
+        1
+      ],
+      8
+    ],
+    "output": 7,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            1,
+            2,
+            3,
+            2,
+            3,
+            7,
+            2,
+            1
+          ],
+          "n": 8
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "dp": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "line": 3,
+        "step": "3~4",
+        "action": "LOOP",
+        "vars": {
+          "i": "0→1"
+        }
+      },
+      {
+        "line": 4,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[1]": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[2]": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[3]": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": "13~14",
+        "action": "LOOP",
+        "vars": {
+          "j": "1→2"
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[3]": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": "17~18",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→1"
+        }
+      },
+      {
+        "line": 6,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[4]": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": "20~21",
+        "action": "LOOP",
+        "vars": {
+          "j": "2→3"
+        }
+      },
+      {
+        "line": 6,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[4]": 5
+        }
+      },
+      {
+        "line": 3,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": "24~28",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→4"
+        }
+      },
+      {
+        "line": 3,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[6]": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": "32~33",
+        "action": "LOOP",
+        "vars": {
+          "j": "1→2"
+        }
+      },
+      {
+        "line": 6,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[6]": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": "35~36",
+        "action": "LOOP",
+        "vars": {
+          "j": "3→4"
+        }
+      },
+      {
+        "line": 6,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[6]": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 3,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 7
+        }
+      },
+      {
+        "line": 4,
+        "step": "40~41",
+        "action": "LOOP",
+        "vars": {
+          "j": "0→1"
+        }
+      },
+      {
+        "line": 6,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[7]": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": "43~44",
+        "action": "LOOP",
+        "vars": {
+          "j": "2→3"
+        }
+      },
+      {
+        "line": 6,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[7]": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": "46~48",
+        "action": "LOOP",
+        "vars": {
+          "j": "4→6"
+        }
+      },
+      {
+        "line": 6,
+        "step": 49,
+        "action": "EXECUTE",
+        "vars": {
+          "dp[7]": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 50,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": "51~52",
+        "action": "LOOP",
+        "vars": {
+          "i": "0→1"
+        }
+      },
+      {
+        "line": 10,
+        "step": 53,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 54,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 10,
+        "step": 55,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 56,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 10,
+        "step": 57,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 58,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 10,
+        "step": 59,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 5
+        }
+      },
+      {
+        "line": 8,
+        "step": "60~61",
+        "action": "LOOP",
+        "vars": {
+          "i": "5→6"
+        }
+      },
+      {
+        "line": 10,
+        "step": 62,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 6
+        }
+      },
+      {
+        "line": 8,
+        "step": 63,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 7
+        }
+      },
+      {
+        "line": 10,
+        "step": 64,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 7
+        }
+      },
+      {
+        "line": 11,
+        "step": 65,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 7
+        }
+      }
+    ],
+    "id": 443,
+    "task_id": 149,
+    "exist_function": [
+      "longest_subseq_with_diff_one"
+    ]
+  },
+  {
+    "code": "def merge(a,b):\r\n    c = []\r\n    while len(a) != 0 and len(b) != 0:\r\n        if a[0] < b[0]:\r\n            c.append(a[0])\r\n            a.remove(a[0])\r\n        else:\r\n            c.append(b[0])\r\n            b.remove(b[0])\r\n    if len(a) == 0:\r\n        c += b\r\n    else:\r\n        c += a\r\n    return c\r\ndef merge_sort(x):\r\n    if len(x) == 0 or len(x) == 1:\r\n        return x\r\n    else:\r\n        middle = len(x)//2\r\n        a = merge_sort(x[:middle])\r\n        b = merge_sort(x[middle:])\r\n        return merge(a,b)",
+    "entry_point": "merge_sort",
+    "input": [
+      [
+        3,
+        4,
+        2,
+        6,
+        5,
+        7,
+        1,
+        9
+      ]
+    ],
+    "output": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9
+    ],
+    "traces": [
+      {
+        "line": 15,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "x": [
+            9
+          ]
+        }
+      },
+      {
+        "line": 17,
+        "step": 2,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            9
+          ]
+        }
+      },
+      {
+        "line": 17,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "x[0]": 1,
+          "x[1]": 9,
+          "middle": 1,
+          "b": [
+            9
+          ],
+          "a": [
+            1
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "a": [
+            1
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            9
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "a[0]": 5,
+          "a[1]": 7,
+          "x[0]": 5,
+          "b[1]": 9,
+          "x[2]": 1,
+          "x[1]": 7,
+          "x[3]": 9,
+          "b[0]": 1,
+          "middle": 2
+        }
+      },
+      {
+        "line": 22,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "a": [
+            5,
+            7
+          ],
+          "b": [
+            1,
+            9
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 6,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            7,
+            9
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "a[3]": 6,
+          "b[3]": 9,
+          "x[3]": 6,
+          "x[5]": 7,
+          "x[4]": 5,
+          "a[1]": 3,
+          "b[1]": 5,
+          "x[2]": 2,
+          "b[2]": 7,
+          "x[1]": 4,
+          "x[6]": 1,
+          "a[0]": 2,
+          "x[0]": 3,
+          "x[7]": 9,
+          "a[2]": 4,
+          "middle": 4
+        }
+      },
+      {
+        "line": 22,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "a": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "b": [
+            1,
+            5,
+            7,
+            9
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 8,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9
+          ]
+        }
+      }
+    ],
+    "id": 450,
+    "task_id": 152,
+    "exist_function": [
+      "merge",
+      "merge_sort"
+    ]
+  },
+  {
+    "code": "def merge(a,b):\r\n    c = []\r\n    while len(a) != 0 and len(b) != 0:\r\n        if a[0] < b[0]:\r\n            c.append(a[0])\r\n            a.remove(a[0])\r\n        else:\r\n            c.append(b[0])\r\n            b.remove(b[0])\r\n    if len(a) == 0:\r\n        c += b\r\n    else:\r\n        c += a\r\n    return c\r\ndef merge_sort(x):\r\n    if len(x) == 0 or len(x) == 1:\r\n        return x\r\n    else:\r\n        middle = len(x)//2\r\n        a = merge_sort(x[:middle])\r\n        b = merge_sort(x[middle:])\r\n        return merge(a,b)",
+    "entry_point": "merge_sort",
+    "input": [
+      [
+        7,
+        25,
+        45,
+        78,
+        11,
+        33,
+        19
+      ]
+    ],
+    "output": [
+      7,
+      11,
+      19,
+      25,
+      33,
+      45,
+      78
+    ],
+    "traces": [
+      {
+        "line": 15,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "x": [
+            19
+          ]
+        }
+      },
+      {
+        "line": 17,
+        "step": 2,
+        "action": "RETURN",
+        "vars": {
+          "__return__": []
+        }
+      },
+      {
+        "line": 17,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "x[0]": 33,
+          "x[1]": 19,
+          "middle": 1,
+          "b": [
+            19
+          ],
+          "a": [
+            33
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "b": [
+            19
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": []
+        }
+      },
+      {
+        "line": 22,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "a[0]": 11,
+          "a[1]": 78,
+          "x[0]": 78,
+          "b[1]": 33,
+          "x[2]": 33,
+          "x[1]": 11,
+          "x[3]": 19,
+          "middle": 2
+        }
+      },
+      {
+        "line": 22,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "a": [
+            11,
+            78
+          ],
+          "b": [
+            19,
+            33
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 6,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            78
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "x[6]": 19,
+          "a[0]": 7,
+          "x[4]": 11,
+          "a[1]": 25,
+          "x[0]": 7,
+          "b[1]": 19,
+          "x[2]": 45,
+          "b[2]": 33,
+          "x[1]": 25,
+          "a[2]": 45,
+          "b[3]": 78,
+          "x[3]": 78,
+          "b[0]": 11,
+          "x[5]": 33,
+          "middle": 3
+        }
+      },
+      {
+        "line": 22,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "a": [
+            7,
+            25,
+            45
+          ],
+          "b": [
+            11,
+            19,
+            33,
+            78
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 8,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            7,
+            11,
+            19,
+            25,
+            33,
+            45,
+            78
+          ]
+        }
+      }
+    ],
+    "id": 451,
+    "task_id": 152,
+    "exist_function": [
+      "merge",
+      "merge_sort"
+    ]
+  },
+  {
+    "code": "def merge(a,b):\r\n    c = []\r\n    while len(a) != 0 and len(b) != 0:\r\n        if a[0] < b[0]:\r\n            c.append(a[0])\r\n            a.remove(a[0])\r\n        else:\r\n            c.append(b[0])\r\n            b.remove(b[0])\r\n    if len(a) == 0:\r\n        c += b\r\n    else:\r\n        c += a\r\n    return c\r\ndef merge_sort(x):\r\n    if len(x) == 0 or len(x) == 1:\r\n        return x\r\n    else:\r\n        middle = len(x)//2\r\n        a = merge_sort(x[:middle])\r\n        b = merge_sort(x[middle:])\r\n        return merge(a,b)",
+    "entry_point": "merge_sort",
+    "input": [
+      [
+        3,
+        1,
+        4,
+        9,
+        8
+      ]
+    ],
+    "output": [
+      1,
+      3,
+      4,
+      8,
+      9
+    ],
+    "traces": [
+      {
+        "line": 15,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "x": [
+            8
+          ]
+        }
+      },
+      {
+        "line": 17,
+        "step": 2,
+        "action": "RETURN",
+        "vars": {
+          "__return__": []
+        }
+      },
+      {
+        "line": 17,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "x[0]": 9,
+          "x[1]": 8,
+          "middle": 1,
+          "b": [
+            8
+          ],
+          "a": [
+            9
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "b": [
+            8
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            8,
+            9
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "a[0]": 4,
+          "x[0]": 4,
+          "b[1]": 9,
+          "x[2]": 8,
+          "x[1]": 9
+        }
+      },
+      {
+        "line": 22,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "a": [
+            4
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 6,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            4,
+            8,
+            9
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "a[0]": 1,
+          "x[4]": 8,
+          "a[1]": 3,
+          "x[0]": 3,
+          "b[1]": 8,
+          "x[2]": 4,
+          "b[2]": 9,
+          "x[1]": 1,
+          "x[3]": 9,
+          "b[0]": 4,
+          "middle": 2
+        }
+      },
+      {
+        "line": 22,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "a": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "line": 22,
+        "step": 8,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            1,
+            3,
+            4,
+            8,
+            9
+          ]
+        }
+      }
+    ],
+    "id": 452,
+    "task_id": 152,
+    "exist_function": [
+      "merge",
+      "merge_sort"
+    ]
+  },
+  {
+    "code": "def even_bit_toggle_number(n) : \r\n    res = 0; count = 0; temp = n \r\n    while (temp > 0) :     \r\n        if (count % 2 == 1) : \r\n            res = res | (1 << count)      \r\n        count = count + 1\r\n        temp >>= 1 \r\n    return n ^ res",
+    "entry_point": "even_bit_toggle_number",
+    "input": [
+      20
+    ],
+    "output": 30,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 20
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 0,
+          "temp": 20,
+          "res": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 10
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 10
+        }
+      },
+      {
+        "line": 6,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": 15,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 30
+        }
+      }
+    ],
+    "id": 460,
+    "task_id": 155,
+    "exist_function": [
+      "even_bit_toggle_number"
+    ]
+  },
+  {
+    "code": "def even_bit_toggle_number(n) : \r\n    res = 0; count = 0; temp = n \r\n    while (temp > 0) :     \r\n        if (count % 2 == 1) : \r\n            res = res | (1 << count)      \r\n        count = count + 1\r\n        temp >>= 1 \r\n    return n ^ res",
+    "entry_point": "even_bit_toggle_number",
+    "input": [
+      30
+    ],
+    "output": 20,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 30
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 0,
+          "temp": 30,
+          "res": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 15
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 7
+        }
+      },
+      {
+        "line": 6,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 10
+        }
+      },
+      {
+        "line": 6,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": 15,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 20
+        }
+      }
+    ],
+    "id": 461,
+    "task_id": 155,
+    "exist_function": [
+      "even_bit_toggle_number"
+    ]
+  },
+  {
+    "code": "def min_Ops(arr,n,k): \r\n    max1 = max(arr) \r\n    res = 0\r\n    for i in range(0,n):  \r\n        if ((max1 - arr[i]) % k != 0): \r\n            return -1 \r\n        else: \r\n            res += (max1 - arr[i]) / k \r\n    return int(res)",
+    "entry_point": "min_Ops",
+    "input": [
+      [
+        4,
+        2,
+        6,
+        8
+      ],
+      4,
+      3
+    ],
+    "output": -1,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            4,
+            2,
+            6,
+            8
+          ],
+          "n": 4,
+          "k": 3
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "max1": 8
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": -1
+        }
+      }
+    ],
+    "id": 469,
+    "task_id": 158,
+    "exist_function": [
+      "min_Ops"
+    ]
+  },
+  {
+    "code": "def min_Ops(arr,n,k): \r\n    max1 = max(arr) \r\n    res = 0\r\n    for i in range(0,n):  \r\n        if ((max1 - arr[i]) % k != 0): \r\n            return -1 \r\n        else: \r\n            res += (max1 - arr[i]) / k \r\n    return int(res)",
+    "entry_point": "min_Ops",
+    "input": [
+      [
+        21,
+        33,
+        9,
+        45,
+        63
+      ],
+      5,
+      6
+    ],
+    "output": 24,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            21,
+            33,
+            9,
+            45,
+            63
+          ],
+          "n": 5,
+          "k": 6
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "max1": 63
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 7.0
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 12.0
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 21.0
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 24.0
+        }
+      },
+      {
+        "line": 4,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 9,
+        "step": 13,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 24
+        }
+      }
+    ],
+    "id": 470,
+    "task_id": 158,
+    "exist_function": [
+      "min_Ops"
+    ]
+  },
+  {
+    "code": "def solution (a, b, n): \r\n\ti = 0\r\n\twhile i * a <= n: \r\n\t\tif (n - (i * a)) % b == 0: \r\n\t\t\treturn (\"x = \",i ,\", y = \", \r\n\t\t\tint((n - (i * a)) / b)) \r\n\t\t\treturn 0\r\n\t\ti = i + 1\r\n\treturn (\"No solution\")",
+    "entry_point": "solution",
+    "input": [
+      2,
+      3,
+      7
+    ],
+    "output": "('x = ', 2, ', y = ', 1)",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "a": 2,
+          "b": 3,
+          "n": 7
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": "3~4",
+        "action": "LOOP",
+        "vars": {
+          "i": "1→2"
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "('x = ', 2, ', y = ', 1)"
+        }
+      }
+    ],
+    "id": 474,
+    "task_id": 160,
+    "exist_function": [
+      "solution"
+    ]
+  },
+  {
+    "code": "def solution (a, b, n): \r\n\ti = 0\r\n\twhile i * a <= n: \r\n\t\tif (n - (i * a)) % b == 0: \r\n\t\t\treturn (\"x = \",i ,\", y = \", \r\n\t\t\tint((n - (i * a)) / b)) \r\n\t\t\treturn 0\r\n\t\ti = i + 1\r\n\treturn (\"No solution\")",
+    "entry_point": "solution",
+    "input": [
+      4,
+      2,
+      7
+    ],
+    "output": "No solution",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "a": 4,
+          "b": 2,
+          "n": 7
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": "3~4",
+        "action": "LOOP",
+        "vars": {
+          "i": "1→2"
+        }
+      },
+      {
+        "line": 9,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "No solution"
+        }
+      }
+    ],
+    "id": 475,
+    "task_id": 160,
+    "exist_function": [
+      "solution"
+    ]
+  },
+  {
+    "code": "def solution (a, b, n): \r\n\ti = 0\r\n\twhile i * a <= n: \r\n\t\tif (n - (i * a)) % b == 0: \r\n\t\t\treturn (\"x = \",i ,\", y = \", \r\n\t\t\tint((n - (i * a)) / b)) \r\n\t\t\treturn 0\r\n\t\ti = i + 1\r\n\treturn (\"No solution\")",
+    "entry_point": "solution",
+    "input": [
+      1,
+      13,
+      17
+    ],
+    "output": "('x = ', 4, ', y = ', 1)",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "a": 1,
+          "b": 13,
+          "n": 17
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": "3~6",
+        "action": "LOOP",
+        "vars": {
+          "i": "1→4"
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "('x = ', 4, ', y = ', 1)"
+        }
+      }
+    ],
+    "id": 476,
+    "task_id": 160,
+    "exist_function": [
+      "solution"
+    ]
+  },
+  {
+    "code": "def sum_series(n):\r\n  if n < 1:\r\n    return 0\r\n  else:\r\n    return n + sum_series(n - 2)",
+    "entry_point": "sum_series",
+    "input": [
+      6
+    ],
+    "output": 12,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 3,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 6
+        }
+      },
+      {
+        "line": 3,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 12
+        }
+      }
+    ],
+    "id": 480,
+    "task_id": 162,
+    "exist_function": [
+      "sum_series"
+    ]
+  },
+  {
+    "code": "def sum_series(n):\r\n  if n < 1:\r\n    return 0\r\n  else:\r\n    return n + sum_series(n - 2)",
+    "entry_point": "sum_series",
+    "input": [
+      10
+    ],
+    "output": 30,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 3,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 6
+        }
+      },
+      {
+        "line": 3,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 12
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 20
+        }
+      },
+      {
+        "line": 3,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 30
+        }
+      }
+    ],
+    "id": 481,
+    "task_id": 162,
+    "exist_function": [
+      "sum_series"
+    ]
+  },
+  {
+    "code": "def sum_series(n):\r\n  if n < 1:\r\n    return 0\r\n  else:\r\n    return n + sum_series(n - 2)",
+    "entry_point": "sum_series",
+    "input": [
+      9
+    ],
+    "output": 25,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": -1
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "n": -1
+        }
+      },
+      {
+        "line": 5,
+        "step": 3,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "n": -1
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "n": -1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 9
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "n": -1
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 16
+        }
+      },
+      {
+        "line": 3,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "n": -1
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 25
+        }
+      }
+    ],
+    "id": 482,
+    "task_id": 162,
+    "exist_function": [
+      "sum_series"
+    ]
+  },
+  {
+    "code": "def count_char_position(str1): \r\n    count_chars = 0\r\n    for i in range(len(str1)):\r\n        if ((i == ord(str1[i]) - ord('A')) or \r\n            (i == ord(str1[i]) - ord('a'))): \r\n            count_chars += 1\r\n    return count_chars",
+    "entry_point": "count_char_position",
+    "input": [
+      "xbcefg"
+    ],
+    "output": 2,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "str1": "xbcefg"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": "3~4",
+        "action": "LOOP",
+        "vars": {
+          "i": "0→1"
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": "8~10",
+        "action": "LOOP",
+        "vars": {
+          "i": "3→5"
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2
+        }
+      }
+    ],
+    "id": 489,
+    "task_id": 165,
+    "exist_function": [
+      "count_char_position"
+    ]
+  },
+  {
+    "code": "def count_char_position(str1): \r\n    count_chars = 0\r\n    for i in range(len(str1)):\r\n        if ((i == ord(str1[i]) - ord('A')) or \r\n            (i == ord(str1[i]) - ord('a'))): \r\n            count_chars += 1\r\n    return count_chars",
+    "entry_point": "count_char_position",
+    "input": [
+      "ABcED"
+    ],
+    "output": 3,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "str1": "ABcED"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": "9~10",
+        "action": "LOOP",
+        "vars": {
+          "i": "3→4"
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 3
+        }
+      }
+    ],
+    "id": 490,
+    "task_id": 165,
+    "exist_function": [
+      "count_char_position"
+    ]
+  },
+  {
+    "code": "def count_char_position(str1): \r\n    count_chars = 0\r\n    for i in range(len(str1)):\r\n        if ((i == ord(str1[i]) - ord('A')) or \r\n            (i == ord(str1[i]) - ord('a'))): \r\n            count_chars += 1\r\n    return count_chars",
+    "entry_point": "count_char_position",
+    "input": [
+      "AbgdeF"
+    ],
+    "output": 5,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "str1": "AbgdeF"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": "7~8",
+        "action": "LOOP",
+        "vars": {
+          "i": "2→3"
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 6,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "count_chars": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 14,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 5
+        }
+      }
+    ],
+    "id": 491,
+    "task_id": 165,
+    "exist_function": [
+      "count_char_position"
+    ]
+  },
+  {
+    "code": "def find_even_Pair(A,N): \r\n    evenPair = 0\r\n    for i in range(0,N): \r\n        for j in range(i+1,N): \r\n            if ((A[i] ^ A[j]) % 2 == 0): \r\n                evenPair+=1\r\n    return evenPair;",
+    "entry_point": "find_even_Pair",
+    "input": [
+      [
+        5,
+        4,
+        7,
+        2,
+        1
+      ],
+      5
+    ],
+    "output": 4,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "A": [
+            5,
+            4,
+            7,
+            2,
+            1
+          ],
+          "N": 5
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": "4~5",
+        "action": "LOOP",
+        "vars": {
+          "j": "1→2"
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": "7~8",
+        "action": "LOOP",
+        "vars": {
+          "j": "3→4"
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": "11~12",
+        "action": "LOOP",
+        "vars": {
+          "j": "2→3"
+        }
+      },
+      {
+        "line": 6,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": "16~17",
+        "action": "LOOP",
+        "vars": {
+          "j": "3→4"
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": "19~20",
+        "action": "LOOP",
+        "vars": {
+          "i": "3→4"
+        }
+      },
+      {
+        "line": 7,
+        "step": 21,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 4
+        }
+      }
+    ],
+    "id": 492,
+    "task_id": 166,
+    "exist_function": [
+      "find_even_Pair"
+    ]
+  },
+  {
+    "code": "def find_even_Pair(A,N): \r\n    evenPair = 0\r\n    for i in range(0,N): \r\n        for j in range(i+1,N): \r\n            if ((A[i] ^ A[j]) % 2 == 0): \r\n                evenPair+=1\r\n    return evenPair;",
+    "entry_point": "find_even_Pair",
+    "input": [
+      [
+        7,
+        2,
+        8,
+        1,
+        0,
+        5,
+        11
+      ],
+      7
+    ],
+    "output": 9,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "A": [
+            7,
+            2,
+            8,
+            1,
+            0,
+            5,
+            11
+          ],
+          "N": 7
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": "4~6",
+        "action": "LOOP",
+        "vars": {
+          "j": "1→3"
+        }
+      },
+      {
+        "line": 6,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": "8~9",
+        "action": "LOOP",
+        "vars": {
+          "j": "4→5"
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": "16~17",
+        "action": "LOOP",
+        "vars": {
+          "j": "3→4"
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": "19~20",
+        "action": "LOOP",
+        "vars": {
+          "j": "5→6"
+        }
+      },
+      {
+        "line": 3,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": "22~23",
+        "action": "LOOP",
+        "vars": {
+          "j": "3→4"
+        }
+      },
+      {
+        "line": 6,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": "25~26",
+        "action": "LOOP",
+        "vars": {
+          "j": "5→6"
+        }
+      },
+      {
+        "line": 3,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": "28~29",
+        "action": "LOOP",
+        "vars": {
+          "j": "4→5"
+        }
+      },
+      {
+        "line": 6,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 7
+        }
+      },
+      {
+        "line": 4,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 6,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 8
+        }
+      },
+      {
+        "line": 3,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": "34~35",
+        "action": "LOOP",
+        "vars": {
+          "j": "5→6"
+        }
+      },
+      {
+        "line": 3,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 9
+        }
+      },
+      {
+        "line": 3,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 39,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 9
+        }
+      }
+    ],
+    "id": 493,
+    "task_id": 166,
+    "exist_function": [
+      "find_even_Pair"
+    ]
+  },
+  {
+    "code": "def find_even_Pair(A,N): \r\n    evenPair = 0\r\n    for i in range(0,N): \r\n        for j in range(i+1,N): \r\n            if ((A[i] ^ A[j]) % 2 == 0): \r\n                evenPair+=1\r\n    return evenPair;",
+    "entry_point": "find_even_Pair",
+    "input": [
+      [
+        1,
+        2,
+        3
+      ],
+      3
+    ],
+    "output": 1,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "A": [
+            1,
+            2,
+            3
+          ],
+          "N": 3
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": "4~5",
+        "action": "LOOP",
+        "vars": {
+          "j": "1→2"
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "evenPair": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": "7~8",
+        "action": "LOOP",
+        "vars": {
+          "i": "1→2"
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 1
+        }
+      }
+    ],
+    "id": 494,
+    "task_id": 166,
+    "exist_function": [
+      "find_even_Pair"
+    ]
+  },
+  {
+    "code": "def next_Power_Of_2(n): \r\n    count = 0; \r\n    if (n and not(n & (n - 1))): \r\n        return n   \r\n    while( n != 0): \r\n        n >>= 1\r\n        count += 1\r\n    return 1 << count;",
+    "entry_point": "next_Power_Of_2",
+    "input": [
+      5
+    ],
+    "output": 8,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 5
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 9,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 8
+        }
+      }
+    ],
+    "id": 496,
+    "task_id": 167,
+    "exist_function": [
+      "next_Power_Of_2"
+    ]
+  },
+  {
+    "code": "def next_Power_Of_2(n): \r\n    count = 0; \r\n    if (n and not(n & (n - 1))): \r\n        return n   \r\n    while( n != 0): \r\n        n >>= 1\r\n        count += 1\r\n    return 1 << count;",
+    "entry_point": "next_Power_Of_2",
+    "input": [
+      17
+    ],
+    "output": 32,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 17
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 8
+        }
+      },
+      {
+        "line": 7,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 4
+        }
+      },
+      {
+        "line": 6,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 5
+        }
+      },
+      {
+        "line": 8,
+        "step": 13,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 32
+        }
+      }
+    ],
+    "id": 497,
+    "task_id": 167,
+    "exist_function": [
+      "next_Power_Of_2"
+    ]
+  },
+  {
+    "code": "def frequency(a,x): \r\n    count = 0  \r\n    for i in a: \r\n        if i == x: count += 1\r\n    return count",
+    "entry_point": "frequency",
+    "input": [
+      [
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4
+      ],
+      3
+    ],
+    "output": 3,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "a": [
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4
+          ],
+          "x": 3
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": "3~5",
+        "action": "LOOP",
+        "vars": {
+          "i": "1→3"
+        }
+      },
+      {
+        "line": 4,
+        "step": "6~8",
+        "action": "LOOP",
+        "vars": {
+          "count": "1→3"
+        }
+      },
+      {
+        "line": 3,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 10,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 3
+        }
+      }
+    ],
+    "id": 499,
+    "task_id": 168,
+    "exist_function": [
+      "frequency"
+    ]
+  }
+]

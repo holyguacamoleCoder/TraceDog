@@ -1,0 +1,10045 @@
+[
+  {
+    "code": "from copy import deepcopy\r\ndef colon_tuplex(tuplex,m,n):\r\n  tuplex_colon = deepcopy(tuplex)\r\n  tuplex_colon[m].append(n)\r\n  return tuplex_colon",
+    "entry_point": "colon_tuplex",
+    "input": [
+      "('HELLO', 5, [], True)",
+      2,
+      500
+    ],
+    "output": "('HELLO', 5, [500], True)",
+    "traces": [
+      {
+        "line": 2,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "tuplex": "('HELLO', 5, [], True)",
+          "m": 2,
+          "n": 500
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "tuplex_colon": "('HELLO', 5, [], True)"
+        }
+      },
+      {
+        "line": 4,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "tuplex_colon[2][0]": 500
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "('HELLO', 5, [500], True)"
+        }
+      }
+    ],
+    "id": 917,
+    "task_id": 307,
+    "exist_function": [
+      "colon_tuplex"
+    ]
+  },
+  {
+    "code": "def set_left_most_unset_bit(n): \r\n    if not (n & (n + 1)): \r\n        return n \r\n    pos, temp, count = 0, n, 0 \r\n    while temp: \r\n        if not (temp & 1): \r\n            pos = count      \r\n        count += 1; temp>>=1\r\n    return (n | (1 << (pos)))",
+    "entry_point": "set_left_most_unset_bit",
+    "input": [
+      10
+    ],
+    "output": 14,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 10
+        }
+      },
+      {
+        "line": 4,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "pos": 0,
+          "temp": 10,
+          "count": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 5,
+          "count": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 2,
+          "count": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "pos": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 1,
+          "count": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 0,
+          "count": 4
+        }
+      },
+      {
+        "line": 9,
+        "step": 8,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 14
+        }
+      }
+    ],
+    "id": 927,
+    "task_id": 311,
+    "exist_function": [
+      "set_left_most_unset_bit"
+    ]
+  },
+  {
+    "code": "def set_left_most_unset_bit(n): \r\n    if not (n & (n + 1)): \r\n        return n \r\n    pos, temp, count = 0, n, 0 \r\n    while temp: \r\n        if not (temp & 1): \r\n            pos = count      \r\n        count += 1; temp>>=1\r\n    return (n | (1 << (pos)))",
+    "entry_point": "set_left_most_unset_bit",
+    "input": [
+      12
+    ],
+    "output": 14,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 12
+        }
+      },
+      {
+        "line": 4,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "pos": 0,
+          "temp": 12,
+          "count": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 6,
+          "count": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "pos": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 3,
+          "count": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 1,
+          "count": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 0,
+          "count": 4
+        }
+      },
+      {
+        "line": 9,
+        "step": 8,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 14
+        }
+      }
+    ],
+    "id": 928,
+    "task_id": 311,
+    "exist_function": [
+      "set_left_most_unset_bit"
+    ]
+  },
+  {
+    "code": "def pos_nos(list1):\r\n  for num in list1: \r\n    if num >= 0: \r\n       return num",
+    "entry_point": "pos_nos",
+    "input": [
+      [
+        -1,
+        -2,
+        1,
+        2
+      ]
+    ],
+    "output": 1,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "list1": [
+            -1,
+            -2,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -1
+        }
+      },
+      {
+        "line": 2,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -2
+        }
+      },
+      {
+        "line": 2,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 1
+        }
+      }
+    ],
+    "id": 933,
+    "task_id": 313,
+    "exist_function": [
+      "pos_nos"
+    ]
+  },
+  {
+    "code": "def pos_nos(list1):\r\n  for num in list1: \r\n    if num >= 0: \r\n       return num",
+    "entry_point": "pos_nos",
+    "input": [
+      [
+        -2,
+        -3,
+        1
+      ]
+    ],
+    "output": 1,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "list1": [
+            -2,
+            -3,
+            1
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -2
+        }
+      },
+      {
+        "line": 2,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -3
+        }
+      },
+      {
+        "line": 2,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 1
+        }
+      }
+    ],
+    "id": 935,
+    "task_id": 313,
+    "exist_function": [
+      "pos_nos"
+    ]
+  },
+  {
+    "code": "def max_sum_rectangular_grid(grid, n) : \r\n\tincl = max(grid[0][0], grid[1][0]) \r\n\texcl = 0\r\n\tfor i in range(1, n) : \r\n\t\texcl_new = max(excl, incl) \r\n\t\tincl = excl + max(grid[0][i], grid[1][i]) \r\n\t\texcl = excl_new \r\n\treturn max(excl, incl)",
+    "entry_point": "max_sum_rectangular_grid",
+    "input": [
+      [
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          0,
+          0
+        ]
+      ],
+      3
+    ],
+    "output": 7,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "grid": [
+            [
+              1,
+              4,
+              5
+            ],
+            [
+              2,
+              0,
+              0
+            ]
+          ],
+          "n": 3
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 4
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 12,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 7
+        }
+      }
+    ],
+    "id": 936,
+    "task_id": 314,
+    "exist_function": [
+      "max_sum_rectangular_grid"
+    ]
+  },
+  {
+    "code": "def max_sum_rectangular_grid(grid, n) : \r\n\tincl = max(grid[0][0], grid[1][0]) \r\n\texcl = 0\r\n\tfor i in range(1, n) : \r\n\t\texcl_new = max(excl, incl) \r\n\t\tincl = excl + max(grid[0][i], grid[1][i]) \r\n\t\texcl = excl_new \r\n\treturn max(excl, incl)",
+    "entry_point": "max_sum_rectangular_grid",
+    "input": [
+      [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      5
+    ],
+    "output": 24,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "grid": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            [
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          ],
+          "n": 5
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 6
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 6
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 7
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 14
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 7
+        }
+      },
+      {
+        "line": 4,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 14
+        }
+      },
+      {
+        "line": 6,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 16
+        }
+      },
+      {
+        "line": 7,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 14
+        }
+      },
+      {
+        "line": 4,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 16
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 24
+        }
+      },
+      {
+        "line": 7,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 16
+        }
+      },
+      {
+        "line": 8,
+        "step": 20,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 24
+        }
+      }
+    ],
+    "id": 937,
+    "task_id": 314,
+    "exist_function": [
+      "max_sum_rectangular_grid"
+    ]
+  },
+  {
+    "code": "def max_sum_rectangular_grid(grid, n) : \r\n\tincl = max(grid[0][0], grid[1][0]) \r\n\texcl = 0\r\n\tfor i in range(1, n) : \r\n\t\texcl_new = max(excl, incl) \r\n\t\tincl = excl + max(grid[0][i], grid[1][i]) \r\n\t\texcl = excl_new \r\n\treturn max(excl, incl)",
+    "entry_point": "max_sum_rectangular_grid",
+    "input": [
+      [
+        [
+          7,
+          9,
+          11,
+          15,
+          19
+        ],
+        [
+          21,
+          25,
+          28,
+          31,
+          32
+        ]
+      ],
+      5
+    ],
+    "output": 81,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "grid": [
+            [
+              7,
+              9,
+              11,
+              15,
+              19
+            ],
+            [
+              21,
+              25,
+              28,
+              31,
+              32
+            ]
+          ],
+          "n": 5
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 21
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 21
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 25
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 21
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 25
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 49
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 25
+        }
+      },
+      {
+        "line": 4,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 49
+        }
+      },
+      {
+        "line": 6,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 56
+        }
+      },
+      {
+        "line": 7,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 49
+        }
+      },
+      {
+        "line": 4,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "excl_new": 56
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "incl": 81
+        }
+      },
+      {
+        "line": 7,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "excl": 56
+        }
+      },
+      {
+        "line": 8,
+        "step": 20,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 81
+        }
+      }
+    ],
+    "id": 938,
+    "task_id": 314,
+    "exist_function": [
+      "max_sum_rectangular_grid"
+    ]
+  },
+  {
+    "code": "def find_Max_Len_Even(str): \r\n    n = len(str) \r\n    i = 0\r\n    currlen = 0\r\n    maxlen = 0\r\n    st = -1\r\n    while (i < n): \r\n        if (str[i] == ' '): \r\n            if (currlen % 2 == 0): \r\n                if (maxlen < currlen): \r\n                    maxlen = currlen \r\n                    st = i - currlen \r\n            currlen = 0 \r\n        else : \r\n            currlen += 1\r\n        i += 1\r\n    if (currlen % 2 == 0): \r\n        if (maxlen < currlen): \r\n            maxlen = currlen \r\n            st = i - currlen \r\n    if (st == -1): \r\n        return \"-1\" \r\n    return str[st: st + maxlen]",
+    "entry_point": "find_Max_Len_Even",
+    "input": [
+      "python language"
+    ],
+    "output": "language",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "str": "python language"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 15
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "maxlen": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "st": -1
+        }
+      },
+      {
+        "line": 15,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 1
+        }
+      },
+      {
+        "line": 16,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 15,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 2
+        }
+      },
+      {
+        "line": 16,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 15,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 3
+        }
+      },
+      {
+        "line": 16,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 15,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 4
+        }
+      },
+      {
+        "line": 16,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 15,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 5
+        }
+      },
+      {
+        "line": 16,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 15,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 6
+        }
+      },
+      {
+        "line": 16,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 11,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "maxlen": 6
+        }
+      },
+      {
+        "line": 12,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "st": 0
+        }
+      },
+      {
+        "line": 13,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 0
+        }
+      },
+      {
+        "line": 16,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 7
+        }
+      },
+      {
+        "line": 15,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 1
+        }
+      },
+      {
+        "line": 16,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 8
+        }
+      },
+      {
+        "line": 15,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 2
+        }
+      },
+      {
+        "line": 16,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 9
+        }
+      },
+      {
+        "line": 15,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 3
+        }
+      },
+      {
+        "line": 16,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 10
+        }
+      },
+      {
+        "line": 15,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 4
+        }
+      },
+      {
+        "line": 16,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 11
+        }
+      },
+      {
+        "line": 15,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 5
+        }
+      },
+      {
+        "line": 16,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 12
+        }
+      },
+      {
+        "line": 15,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 6
+        }
+      },
+      {
+        "line": 16,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 13
+        }
+      },
+      {
+        "line": 15,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 7
+        }
+      },
+      {
+        "line": 16,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 14
+        }
+      },
+      {
+        "line": 15,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 8
+        }
+      },
+      {
+        "line": 16,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 15
+        }
+      },
+      {
+        "line": 19,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "maxlen": 8
+        }
+      },
+      {
+        "line": 20,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "st": 7
+        }
+      },
+      {
+        "line": 23,
+        "step": 41,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "language"
+        }
+      }
+    ],
+    "id": 939,
+    "task_id": 315,
+    "exist_function": [
+      "find_Max_Len_Even"
+    ]
+  },
+  {
+    "code": "def find_Max_Len_Even(str): \r\n    n = len(str) \r\n    i = 0\r\n    currlen = 0\r\n    maxlen = 0\r\n    st = -1\r\n    while (i < n): \r\n        if (str[i] == ' '): \r\n            if (currlen % 2 == 0): \r\n                if (maxlen < currlen): \r\n                    maxlen = currlen \r\n                    st = i - currlen \r\n            currlen = 0 \r\n        else : \r\n            currlen += 1\r\n        i += 1\r\n    if (currlen % 2 == 0): \r\n        if (maxlen < currlen): \r\n            maxlen = currlen \r\n            st = i - currlen \r\n    if (st == -1): \r\n        return \"-1\" \r\n    return str[st: st + maxlen]",
+    "entry_point": "find_Max_Len_Even",
+    "input": [
+      "maximum even length"
+    ],
+    "output": "length",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "str": "maximum even length"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 19
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "maxlen": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "st": -1
+        }
+      },
+      {
+        "line": 15,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 1
+        }
+      },
+      {
+        "line": 16,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 15,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 2
+        }
+      },
+      {
+        "line": 16,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 15,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 3
+        }
+      },
+      {
+        "line": 16,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 15,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 4
+        }
+      },
+      {
+        "line": 16,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 15,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 5
+        }
+      },
+      {
+        "line": 16,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 15,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 6
+        }
+      },
+      {
+        "line": 16,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 15,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 7
+        }
+      },
+      {
+        "line": 16,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 7
+        }
+      },
+      {
+        "line": 13,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 0
+        }
+      },
+      {
+        "line": 16,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 8
+        }
+      },
+      {
+        "line": 15,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 1
+        }
+      },
+      {
+        "line": 16,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 9
+        }
+      },
+      {
+        "line": 15,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 2
+        }
+      },
+      {
+        "line": 16,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 10
+        }
+      },
+      {
+        "line": 15,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 3
+        }
+      },
+      {
+        "line": 16,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 11
+        }
+      },
+      {
+        "line": 15,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 4
+        }
+      },
+      {
+        "line": 16,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 12
+        }
+      },
+      {
+        "line": 11,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "maxlen": 4
+        }
+      },
+      {
+        "line": 12,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "st": 8
+        }
+      },
+      {
+        "line": 13,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 0
+        }
+      },
+      {
+        "line": 16,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 13
+        }
+      },
+      {
+        "line": 15,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 1
+        }
+      },
+      {
+        "line": 16,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 14
+        }
+      },
+      {
+        "line": 15,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 2
+        }
+      },
+      {
+        "line": 16,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 15
+        }
+      },
+      {
+        "line": 15,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 3
+        }
+      },
+      {
+        "line": 16,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 16
+        }
+      },
+      {
+        "line": 15,
+        "step": 41,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 4
+        }
+      },
+      {
+        "line": 16,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 17
+        }
+      },
+      {
+        "line": 15,
+        "step": 43,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 5
+        }
+      },
+      {
+        "line": 16,
+        "step": 44,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 18
+        }
+      },
+      {
+        "line": 15,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 6
+        }
+      },
+      {
+        "line": 16,
+        "step": 46,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 19
+        }
+      },
+      {
+        "line": 19,
+        "step": 47,
+        "action": "EXECUTE",
+        "vars": {
+          "maxlen": 6
+        }
+      },
+      {
+        "line": 20,
+        "step": 48,
+        "action": "EXECUTE",
+        "vars": {
+          "st": 13
+        }
+      },
+      {
+        "line": 23,
+        "step": 49,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "length"
+        }
+      }
+    ],
+    "id": 940,
+    "task_id": 315,
+    "exist_function": [
+      "find_Max_Len_Even"
+    ]
+  },
+  {
+    "code": "def find_Max_Len_Even(str): \r\n    n = len(str) \r\n    i = 0\r\n    currlen = 0\r\n    maxlen = 0\r\n    st = -1\r\n    while (i < n): \r\n        if (str[i] == ' '): \r\n            if (currlen % 2 == 0): \r\n                if (maxlen < currlen): \r\n                    maxlen = currlen \r\n                    st = i - currlen \r\n            currlen = 0 \r\n        else : \r\n            currlen += 1\r\n        i += 1\r\n    if (currlen % 2 == 0): \r\n        if (maxlen < currlen): \r\n            maxlen = currlen \r\n            st = i - currlen \r\n    if (st == -1): \r\n        return \"-1\" \r\n    return str[st: st + maxlen]",
+    "entry_point": "find_Max_Len_Even",
+    "input": [
+      "eve"
+    ],
+    "output": "-1",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "str": "eve"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "n": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "maxlen": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "st": -1
+        }
+      },
+      {
+        "line": 15,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 1
+        }
+      },
+      {
+        "line": 16,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 15,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 2
+        }
+      },
+      {
+        "line": 16,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 15,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "currlen": 3
+        }
+      },
+      {
+        "line": 16,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 22,
+        "step": 13,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "-1"
+        }
+      }
+    ],
+    "id": 941,
+    "task_id": 315,
+    "exist_function": [
+      "find_Max_Len_Even"
+    ]
+  },
+  {
+    "code": "def find_last_occurrence(A, x):\r\n    (left, right) = (0, len(A) - 1)\r\n    result = -1\r\n    while left <= right:\r\n        mid = (left + right) // 2\r\n        if x == A[mid]:\r\n            result = mid\r\n            left = mid + 1\r\n        elif x < A[mid]:\r\n            right = mid - 1\r\n        else:\r\n            left = mid + 1\r\n    return result",
+    "entry_point": "find_last_occurrence",
+    "input": [
+      [
+        2,
+        5,
+        5,
+        5,
+        6,
+        6,
+        8,
+        9,
+        9,
+        9
+      ],
+      5
+    ],
+    "output": 3,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "A": [
+            2,
+            5,
+            5,
+            5,
+            6,
+            6,
+            8,
+            9,
+            9,
+            9
+          ],
+          "x": 5
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 0,
+          "right": 9
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "result": -1
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 4
+        }
+      },
+      {
+        "line": 10,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "right": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 4
+        }
+      },
+      {
+        "line": 13,
+        "step": 15,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 3
+        }
+      }
+    ],
+    "id": 942,
+    "task_id": 316,
+    "exist_function": [
+      "find_last_occurrence"
+    ]
+  },
+  {
+    "code": "def find_last_occurrence(A, x):\r\n    (left, right) = (0, len(A) - 1)\r\n    result = -1\r\n    while left <= right:\r\n        mid = (left + right) // 2\r\n        if x == A[mid]:\r\n            result = mid\r\n            left = mid + 1\r\n        elif x < A[mid]:\r\n            right = mid - 1\r\n        else:\r\n            left = mid + 1\r\n    return result",
+    "entry_point": "find_last_occurrence",
+    "input": [
+      [
+        2,
+        3,
+        5,
+        8,
+        6,
+        6,
+        8,
+        9,
+        9,
+        9
+      ],
+      9
+    ],
+    "output": 9,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "A": [
+            2,
+            3,
+            5,
+            8,
+            6,
+            6,
+            8,
+            9,
+            9,
+            9
+          ],
+          "x": 9
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 0,
+          "right": 9
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "result": -1
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 4
+        }
+      },
+      {
+        "line": 12,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 5
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 7
+        }
+      },
+      {
+        "line": 8,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 8
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 8
+        }
+      },
+      {
+        "line": 7,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 8
+        }
+      },
+      {
+        "line": 8,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 9
+        }
+      },
+      {
+        "line": 5,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 9
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 9
+        }
+      },
+      {
+        "line": 8,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 10
+        }
+      },
+      {
+        "line": 13,
+        "step": 15,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 9
+        }
+      }
+    ],
+    "id": 943,
+    "task_id": 316,
+    "exist_function": [
+      "find_last_occurrence"
+    ]
+  },
+  {
+    "code": "def find_last_occurrence(A, x):\r\n    (left, right) = (0, len(A) - 1)\r\n    result = -1\r\n    while left <= right:\r\n        mid = (left + right) // 2\r\n        if x == A[mid]:\r\n            result = mid\r\n            left = mid + 1\r\n        elif x < A[mid]:\r\n            right = mid - 1\r\n        else:\r\n            left = mid + 1\r\n    return result",
+    "entry_point": "find_last_occurrence",
+    "input": [
+      [
+        2,
+        2,
+        1,
+        5,
+        6,
+        6,
+        6,
+        9,
+        9,
+        9
+      ],
+      6
+    ],
+    "output": 6,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "A": [
+            2,
+            2,
+            1,
+            5,
+            6,
+            6,
+            6,
+            9,
+            9,
+            9
+          ],
+          "x": 6
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 0,
+          "right": 9
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "result": -1
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 5
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 7
+        }
+      },
+      {
+        "line": 10,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "right": 6
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 5
+        }
+      },
+      {
+        "line": 8,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 6
+        }
+      },
+      {
+        "line": 5,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "result": 6
+        }
+      },
+      {
+        "line": 8,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "left": 7
+        }
+      },
+      {
+        "line": 13,
+        "step": 15,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 6
+        }
+      }
+    ],
+    "id": 944,
+    "task_id": 316,
+    "exist_function": [
+      "find_last_occurrence"
+    ]
+  },
+  {
+    "code": "def max_volume (s): \r\n    maxvalue = 0\r\n    i = 1\r\n    for i in range(s - 1): \r\n        j = 1\r\n        for j in range(s): \r\n            k = s - i - j \r\n            maxvalue = max(maxvalue, i * j * k)         \r\n    return maxvalue",
+    "entry_point": "max_volume",
+    "input": [
+      8
+    ],
+    "output": 18,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "s": 8
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "maxvalue": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 8
+        }
+      },
+      {
+        "line": 6,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 7
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 6
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 4
+        }
+      },
+      {
+        "line": 6,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 7
+        }
+      },
+      {
+        "line": 6,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 6
+        }
+      },
+      {
+        "line": 8,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "maxvalue": 6
+        }
+      },
+      {
+        "line": 6,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 5
+        }
+      },
+      {
+        "line": 8,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "maxvalue": 10
+        }
+      },
+      {
+        "line": 6,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "maxvalue": 12
+        }
+      },
+      {
+        "line": 6,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 41,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 43,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 44,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 46,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 6
+        }
+      },
+      {
+        "line": 6,
+        "step": 47,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 48,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 49,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 50,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 51,
+        "action": "EXECUTE",
+        "vars": {
+          "maxvalue": 16
+        }
+      },
+      {
+        "line": 6,
+        "step": 52,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 53,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 54,
+        "action": "EXECUTE",
+        "vars": {
+          "maxvalue": 18
+        }
+      },
+      {
+        "line": 6,
+        "step": 55,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 56,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 57,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 58,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 59,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 60,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 61,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 62,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -1
+        }
+      },
+      {
+        "line": 4,
+        "step": 63,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 64,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 65,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 66,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 67,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 68,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 4
+        }
+      },
+      {
+        "line": 6,
+        "step": 69,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 70,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 71,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 72,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 73,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 74,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 75,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 76,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 77,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 78,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -1
+        }
+      },
+      {
+        "line": 6,
+        "step": 79,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 80,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -2
+        }
+      },
+      {
+        "line": 4,
+        "step": 81,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 82,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 83,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 84,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 4
+        }
+      },
+      {
+        "line": 6,
+        "step": 85,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 86,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 87,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 88,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 89,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 90,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 91,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 92,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 93,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 94,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -1
+        }
+      },
+      {
+        "line": 6,
+        "step": 95,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 96,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -2
+        }
+      },
+      {
+        "line": 6,
+        "step": 97,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 98,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -3
+        }
+      },
+      {
+        "line": 4,
+        "step": 99,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 5,
+        "step": 100,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 101,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 102,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 103,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 104,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 105,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 106,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 107,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 108,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 109,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 110,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -1
+        }
+      },
+      {
+        "line": 6,
+        "step": 111,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 112,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -2
+        }
+      },
+      {
+        "line": 6,
+        "step": 113,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 114,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -3
+        }
+      },
+      {
+        "line": 6,
+        "step": 115,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 116,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -4
+        }
+      },
+      {
+        "line": 4,
+        "step": 117,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 5,
+        "step": 118,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 119,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 120,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 121,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 122,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 123,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 124,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 125,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 126,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -1
+        }
+      },
+      {
+        "line": 6,
+        "step": 127,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 128,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -2
+        }
+      },
+      {
+        "line": 6,
+        "step": 129,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 130,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -3
+        }
+      },
+      {
+        "line": 6,
+        "step": 131,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 132,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -4
+        }
+      },
+      {
+        "line": 6,
+        "step": 133,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 134,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -5
+        }
+      },
+      {
+        "line": 9,
+        "step": 135,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 18
+        }
+      }
+    ],
+    "id": 948,
+    "task_id": 318,
+    "exist_function": [
+      "max_volume"
+    ]
+  },
+  {
+    "code": "def max_volume (s): \r\n    maxvalue = 0\r\n    i = 1\r\n    for i in range(s - 1): \r\n        j = 1\r\n        for j in range(s): \r\n            k = s - i - j \r\n            maxvalue = max(maxvalue, i * j * k)         \r\n    return maxvalue",
+    "entry_point": "max_volume",
+    "input": [
+      4
+    ],
+    "output": 2,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "s": 4
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "maxvalue": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 4
+        }
+      },
+      {
+        "line": 6,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "maxvalue": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "k": 0
+        }
+      },
+      {
+        "line": 6,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "k": -1
+        }
+      },
+      {
+        "line": 9,
+        "step": 35,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2
+        }
+      }
+    ],
+    "id": 949,
+    "task_id": 318,
+    "exist_function": [
+      "max_volume"
+    ]
+  },
+  {
+    "code": "def sum_difference(n):\r\n    sumofsquares = 0\r\n    squareofsum = 0\r\n    for num in range(1, n+1):\r\n        sumofsquares += num * num\r\n        squareofsum += num\r\n    squareofsum = squareofsum ** 2\r\n    return squareofsum - sumofsquares",
+    "entry_point": "sum_difference",
+    "input": [
+      12
+    ],
+    "output": 5434,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 12
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 14
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 30
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 10
+        }
+      },
+      {
+        "line": 4,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 5
+        }
+      },
+      {
+        "line": 5,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 55
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 15
+        }
+      },
+      {
+        "line": 4,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 6
+        }
+      },
+      {
+        "line": 5,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 91
+        }
+      },
+      {
+        "line": 6,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 21
+        }
+      },
+      {
+        "line": 4,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 7
+        }
+      },
+      {
+        "line": 5,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 140
+        }
+      },
+      {
+        "line": 6,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 28
+        }
+      },
+      {
+        "line": 4,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 8
+        }
+      },
+      {
+        "line": 5,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 204
+        }
+      },
+      {
+        "line": 6,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 36
+        }
+      },
+      {
+        "line": 4,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 9
+        }
+      },
+      {
+        "line": 5,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 285
+        }
+      },
+      {
+        "line": 6,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 45
+        }
+      },
+      {
+        "line": 4,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 10
+        }
+      },
+      {
+        "line": 5,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 385
+        }
+      },
+      {
+        "line": 6,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 55
+        }
+      },
+      {
+        "line": 4,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 11
+        }
+      },
+      {
+        "line": 5,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 506
+        }
+      },
+      {
+        "line": 6,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 66
+        }
+      },
+      {
+        "line": 4,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 12
+        }
+      },
+      {
+        "line": 5,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 650
+        }
+      },
+      {
+        "line": 6,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 78
+        }
+      },
+      {
+        "line": 7,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 6084
+        }
+      },
+      {
+        "line": 8,
+        "step": 41,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 5434
+        }
+      }
+    ],
+    "id": 954,
+    "task_id": 320,
+    "exist_function": [
+      "sum_difference"
+    ]
+  },
+  {
+    "code": "def sum_difference(n):\r\n    sumofsquares = 0\r\n    squareofsum = 0\r\n    for num in range(1, n+1):\r\n        sumofsquares += num * num\r\n        squareofsum += num\r\n    squareofsum = squareofsum ** 2\r\n    return squareofsum - sumofsquares",
+    "entry_point": "sum_difference",
+    "input": [
+      20
+    ],
+    "output": 41230,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 20
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 14
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 30
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 10
+        }
+      },
+      {
+        "line": 4,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 5
+        }
+      },
+      {
+        "line": 5,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 55
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 15
+        }
+      },
+      {
+        "line": 4,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 6
+        }
+      },
+      {
+        "line": 5,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 91
+        }
+      },
+      {
+        "line": 6,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 21
+        }
+      },
+      {
+        "line": 4,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 7
+        }
+      },
+      {
+        "line": 5,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 140
+        }
+      },
+      {
+        "line": 6,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 28
+        }
+      },
+      {
+        "line": 4,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 8
+        }
+      },
+      {
+        "line": 5,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 204
+        }
+      },
+      {
+        "line": 6,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 36
+        }
+      },
+      {
+        "line": 4,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 9
+        }
+      },
+      {
+        "line": 5,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 285
+        }
+      },
+      {
+        "line": 6,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 45
+        }
+      },
+      {
+        "line": 4,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 10
+        }
+      },
+      {
+        "line": 5,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 385
+        }
+      },
+      {
+        "line": 6,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 55
+        }
+      },
+      {
+        "line": 4,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 11
+        }
+      },
+      {
+        "line": 5,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 506
+        }
+      },
+      {
+        "line": 6,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 66
+        }
+      },
+      {
+        "line": 4,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 12
+        }
+      },
+      {
+        "line": 5,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 650
+        }
+      },
+      {
+        "line": 6,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 78
+        }
+      },
+      {
+        "line": 4,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 13
+        }
+      },
+      {
+        "line": 5,
+        "step": 41,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 819
+        }
+      },
+      {
+        "line": 6,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 91
+        }
+      },
+      {
+        "line": 4,
+        "step": 43,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 14
+        }
+      },
+      {
+        "line": 5,
+        "step": 44,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1015
+        }
+      },
+      {
+        "line": 6,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 105
+        }
+      },
+      {
+        "line": 4,
+        "step": 46,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 15
+        }
+      },
+      {
+        "line": 5,
+        "step": 47,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1240
+        }
+      },
+      {
+        "line": 6,
+        "step": 48,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 120
+        }
+      },
+      {
+        "line": 4,
+        "step": 49,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 16
+        }
+      },
+      {
+        "line": 5,
+        "step": 50,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1496
+        }
+      },
+      {
+        "line": 6,
+        "step": 51,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 136
+        }
+      },
+      {
+        "line": 4,
+        "step": 52,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 17
+        }
+      },
+      {
+        "line": 5,
+        "step": 53,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1785
+        }
+      },
+      {
+        "line": 6,
+        "step": 54,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 153
+        }
+      },
+      {
+        "line": 4,
+        "step": 55,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 18
+        }
+      },
+      {
+        "line": 5,
+        "step": 56,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 2109
+        }
+      },
+      {
+        "line": 6,
+        "step": 57,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 171
+        }
+      },
+      {
+        "line": 4,
+        "step": 58,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 19
+        }
+      },
+      {
+        "line": 5,
+        "step": 59,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 2470
+        }
+      },
+      {
+        "line": 6,
+        "step": 60,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 190
+        }
+      },
+      {
+        "line": 4,
+        "step": 61,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 20
+        }
+      },
+      {
+        "line": 5,
+        "step": 62,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 2870
+        }
+      },
+      {
+        "line": 6,
+        "step": 63,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 210
+        }
+      },
+      {
+        "line": 7,
+        "step": 64,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 44100
+        }
+      },
+      {
+        "line": 8,
+        "step": 65,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 41230
+        }
+      }
+    ],
+    "id": 955,
+    "task_id": 320,
+    "exist_function": [
+      "sum_difference"
+    ]
+  },
+  {
+    "code": "def sum_difference(n):\r\n    sumofsquares = 0\r\n    squareofsum = 0\r\n    for num in range(1, n+1):\r\n        sumofsquares += num * num\r\n        squareofsum += num\r\n    squareofsum = squareofsum ** 2\r\n    return squareofsum - sumofsquares",
+    "entry_point": "sum_difference",
+    "input": [
+      54
+    ],
+    "output": 2151270,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 54
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 14
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 30
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 10
+        }
+      },
+      {
+        "line": 4,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 5
+        }
+      },
+      {
+        "line": 5,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 55
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 15
+        }
+      },
+      {
+        "line": 4,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 6
+        }
+      },
+      {
+        "line": 5,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 91
+        }
+      },
+      {
+        "line": 6,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 21
+        }
+      },
+      {
+        "line": 4,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 7
+        }
+      },
+      {
+        "line": 5,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 140
+        }
+      },
+      {
+        "line": 6,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 28
+        }
+      },
+      {
+        "line": 4,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 8
+        }
+      },
+      {
+        "line": 5,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 204
+        }
+      },
+      {
+        "line": 6,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 36
+        }
+      },
+      {
+        "line": 4,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 9
+        }
+      },
+      {
+        "line": 5,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 285
+        }
+      },
+      {
+        "line": 6,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 45
+        }
+      },
+      {
+        "line": 4,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 10
+        }
+      },
+      {
+        "line": 5,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 385
+        }
+      },
+      {
+        "line": 6,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 55
+        }
+      },
+      {
+        "line": 4,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 11
+        }
+      },
+      {
+        "line": 5,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 506
+        }
+      },
+      {
+        "line": 6,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 66
+        }
+      },
+      {
+        "line": 4,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 12
+        }
+      },
+      {
+        "line": 5,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 650
+        }
+      },
+      {
+        "line": 6,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 78
+        }
+      },
+      {
+        "line": 4,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 13
+        }
+      },
+      {
+        "line": 5,
+        "step": 41,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 819
+        }
+      },
+      {
+        "line": 6,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 91
+        }
+      },
+      {
+        "line": 4,
+        "step": 43,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 14
+        }
+      },
+      {
+        "line": 5,
+        "step": 44,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1015
+        }
+      },
+      {
+        "line": 6,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 105
+        }
+      },
+      {
+        "line": 4,
+        "step": 46,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 15
+        }
+      },
+      {
+        "line": 5,
+        "step": 47,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1240
+        }
+      },
+      {
+        "line": 6,
+        "step": 48,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 120
+        }
+      },
+      {
+        "line": 4,
+        "step": 49,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 16
+        }
+      },
+      {
+        "line": 5,
+        "step": 50,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1496
+        }
+      },
+      {
+        "line": 6,
+        "step": 51,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 136
+        }
+      },
+      {
+        "line": 4,
+        "step": 52,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 17
+        }
+      },
+      {
+        "line": 5,
+        "step": 53,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 1785
+        }
+      },
+      {
+        "line": 6,
+        "step": 54,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 153
+        }
+      },
+      {
+        "line": 4,
+        "step": 55,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 18
+        }
+      },
+      {
+        "line": 5,
+        "step": 56,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 2109
+        }
+      },
+      {
+        "line": 6,
+        "step": 57,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 171
+        }
+      },
+      {
+        "line": 4,
+        "step": 58,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 19
+        }
+      },
+      {
+        "line": 5,
+        "step": 59,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 2470
+        }
+      },
+      {
+        "line": 6,
+        "step": 60,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 190
+        }
+      },
+      {
+        "line": 4,
+        "step": 61,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 20
+        }
+      },
+      {
+        "line": 5,
+        "step": 62,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 2870
+        }
+      },
+      {
+        "line": 6,
+        "step": 63,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 210
+        }
+      },
+      {
+        "line": 4,
+        "step": 64,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 21
+        }
+      },
+      {
+        "line": 5,
+        "step": 65,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 3311
+        }
+      },
+      {
+        "line": 6,
+        "step": 66,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 231
+        }
+      },
+      {
+        "line": 4,
+        "step": 67,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 22
+        }
+      },
+      {
+        "line": 5,
+        "step": 68,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 3795
+        }
+      },
+      {
+        "line": 6,
+        "step": 69,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 253
+        }
+      },
+      {
+        "line": 4,
+        "step": 70,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 23
+        }
+      },
+      {
+        "line": 5,
+        "step": 71,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 4324
+        }
+      },
+      {
+        "line": 6,
+        "step": 72,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 276
+        }
+      },
+      {
+        "line": 4,
+        "step": 73,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 24
+        }
+      },
+      {
+        "line": 5,
+        "step": 74,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 4900
+        }
+      },
+      {
+        "line": 6,
+        "step": 75,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 300
+        }
+      },
+      {
+        "line": 4,
+        "step": 76,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 25
+        }
+      },
+      {
+        "line": 5,
+        "step": 77,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 5525
+        }
+      },
+      {
+        "line": 6,
+        "step": 78,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 325
+        }
+      },
+      {
+        "line": 4,
+        "step": 79,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 26
+        }
+      },
+      {
+        "line": 5,
+        "step": 80,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 6201
+        }
+      },
+      {
+        "line": 6,
+        "step": 81,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 351
+        }
+      },
+      {
+        "line": 4,
+        "step": 82,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 27
+        }
+      },
+      {
+        "line": 5,
+        "step": 83,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 6930
+        }
+      },
+      {
+        "line": 6,
+        "step": 84,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 378
+        }
+      },
+      {
+        "line": 4,
+        "step": 85,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 28
+        }
+      },
+      {
+        "line": 5,
+        "step": 86,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 7714
+        }
+      },
+      {
+        "line": 6,
+        "step": 87,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 406
+        }
+      },
+      {
+        "line": 4,
+        "step": 88,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 29
+        }
+      },
+      {
+        "line": 5,
+        "step": 89,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 8555
+        }
+      },
+      {
+        "line": 6,
+        "step": 90,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 435
+        }
+      },
+      {
+        "line": 4,
+        "step": 91,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 30
+        }
+      },
+      {
+        "line": 5,
+        "step": 92,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 9455
+        }
+      },
+      {
+        "line": 6,
+        "step": 93,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 465
+        }
+      },
+      {
+        "line": 4,
+        "step": 94,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 31
+        }
+      },
+      {
+        "line": 5,
+        "step": 95,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 10416
+        }
+      },
+      {
+        "line": 6,
+        "step": 96,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 496
+        }
+      },
+      {
+        "line": 4,
+        "step": 97,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 32
+        }
+      },
+      {
+        "line": 5,
+        "step": 98,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 11440
+        }
+      },
+      {
+        "line": 6,
+        "step": 99,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 528
+        }
+      },
+      {
+        "line": 4,
+        "step": 100,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 33
+        }
+      },
+      {
+        "line": 5,
+        "step": 101,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 12529
+        }
+      },
+      {
+        "line": 6,
+        "step": 102,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 561
+        }
+      },
+      {
+        "line": 4,
+        "step": 103,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 34
+        }
+      },
+      {
+        "line": 5,
+        "step": 104,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 13685
+        }
+      },
+      {
+        "line": 6,
+        "step": 105,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 595
+        }
+      },
+      {
+        "line": 4,
+        "step": 106,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 35
+        }
+      },
+      {
+        "line": 5,
+        "step": 107,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 14910
+        }
+      },
+      {
+        "line": 6,
+        "step": 108,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 630
+        }
+      },
+      {
+        "line": 4,
+        "step": 109,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 36
+        }
+      },
+      {
+        "line": 5,
+        "step": 110,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 16206
+        }
+      },
+      {
+        "line": 6,
+        "step": 111,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 666
+        }
+      },
+      {
+        "line": 4,
+        "step": 112,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 37
+        }
+      },
+      {
+        "line": 5,
+        "step": 113,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 17575
+        }
+      },
+      {
+        "line": 6,
+        "step": 114,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 703
+        }
+      },
+      {
+        "line": 4,
+        "step": 115,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 38
+        }
+      },
+      {
+        "line": 5,
+        "step": 116,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 19019
+        }
+      },
+      {
+        "line": 6,
+        "step": 117,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 741
+        }
+      },
+      {
+        "line": 4,
+        "step": 118,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 39
+        }
+      },
+      {
+        "line": 5,
+        "step": 119,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 20540
+        }
+      },
+      {
+        "line": 6,
+        "step": 120,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 780
+        }
+      },
+      {
+        "line": 4,
+        "step": 121,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 40
+        }
+      },
+      {
+        "line": 5,
+        "step": 122,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 22140
+        }
+      },
+      {
+        "line": 6,
+        "step": 123,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 820
+        }
+      },
+      {
+        "line": 4,
+        "step": 124,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 41
+        }
+      },
+      {
+        "line": 5,
+        "step": 125,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 23821
+        }
+      },
+      {
+        "line": 6,
+        "step": 126,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 861
+        }
+      },
+      {
+        "line": 4,
+        "step": 127,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 42
+        }
+      },
+      {
+        "line": 5,
+        "step": 128,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 25585
+        }
+      },
+      {
+        "line": 6,
+        "step": 129,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 903
+        }
+      },
+      {
+        "line": 4,
+        "step": 130,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 43
+        }
+      },
+      {
+        "line": 5,
+        "step": 131,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 27434
+        }
+      },
+      {
+        "line": 6,
+        "step": 132,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 946
+        }
+      },
+      {
+        "line": 4,
+        "step": 133,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 44
+        }
+      },
+      {
+        "line": 5,
+        "step": 134,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 29370
+        }
+      },
+      {
+        "line": 6,
+        "step": 135,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 990
+        }
+      },
+      {
+        "line": 4,
+        "step": 136,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 45
+        }
+      },
+      {
+        "line": 5,
+        "step": 137,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 31395
+        }
+      },
+      {
+        "line": 6,
+        "step": 138,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1035
+        }
+      },
+      {
+        "line": 4,
+        "step": 139,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 46
+        }
+      },
+      {
+        "line": 5,
+        "step": 140,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 33511
+        }
+      },
+      {
+        "line": 6,
+        "step": 141,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1081
+        }
+      },
+      {
+        "line": 4,
+        "step": 142,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 47
+        }
+      },
+      {
+        "line": 5,
+        "step": 143,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 35720
+        }
+      },
+      {
+        "line": 6,
+        "step": 144,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1128
+        }
+      },
+      {
+        "line": 4,
+        "step": 145,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 48
+        }
+      },
+      {
+        "line": 5,
+        "step": 146,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 38024
+        }
+      },
+      {
+        "line": 6,
+        "step": 147,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1176
+        }
+      },
+      {
+        "line": 4,
+        "step": 148,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 49
+        }
+      },
+      {
+        "line": 5,
+        "step": 149,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 40425
+        }
+      },
+      {
+        "line": 6,
+        "step": 150,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1225
+        }
+      },
+      {
+        "line": 4,
+        "step": 151,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 50
+        }
+      },
+      {
+        "line": 5,
+        "step": 152,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 42925
+        }
+      },
+      {
+        "line": 6,
+        "step": 153,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1275
+        }
+      },
+      {
+        "line": 4,
+        "step": 154,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 51
+        }
+      },
+      {
+        "line": 5,
+        "step": 155,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 45526
+        }
+      },
+      {
+        "line": 6,
+        "step": 156,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1326
+        }
+      },
+      {
+        "line": 4,
+        "step": 157,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 52
+        }
+      },
+      {
+        "line": 5,
+        "step": 158,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 48230
+        }
+      },
+      {
+        "line": 6,
+        "step": 159,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1378
+        }
+      },
+      {
+        "line": 4,
+        "step": 160,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 53
+        }
+      },
+      {
+        "line": 5,
+        "step": 161,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 51039
+        }
+      },
+      {
+        "line": 6,
+        "step": 162,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1431
+        }
+      },
+      {
+        "line": 4,
+        "step": 163,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 54
+        }
+      },
+      {
+        "line": 5,
+        "step": 164,
+        "action": "EXECUTE",
+        "vars": {
+          "sumofsquares": 53955
+        }
+      },
+      {
+        "line": 6,
+        "step": 165,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 1485
+        }
+      },
+      {
+        "line": 7,
+        "step": 166,
+        "action": "EXECUTE",
+        "vars": {
+          "squareofsum": 2205225
+        }
+      },
+      {
+        "line": 8,
+        "step": 167,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2151270
+        }
+      }
+    ],
+    "id": 956,
+    "task_id": 320,
+    "exist_function": [
+      "sum_difference"
+    ]
+  },
+  {
+    "code": "def find_demlo(s): \r\n\tl = len(s) \r\n\tres = \"\" \r\n\tfor i in range(1,l+1): \r\n\t\tres = res + str(i) \r\n\tfor i in range(l-1,0,-1): \r\n\t\tres = res + str(i) \r\n\treturn res",
+    "entry_point": "find_demlo",
+    "input": [
+      "111111"
+    ],
+    "output": "12345654321",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "s": "111111"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "l": 6
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "res": ""
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1"
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12"
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123"
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234"
+        }
+      },
+      {
+        "line": 4,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 5,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12345"
+        }
+      },
+      {
+        "line": 4,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 5,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123456"
+        }
+      },
+      {
+        "line": 6,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234565"
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12345654"
+        }
+      },
+      {
+        "line": 6,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123456543"
+        }
+      },
+      {
+        "line": 6,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234565432"
+        }
+      },
+      {
+        "line": 6,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12345654321"
+        }
+      },
+      {
+        "line": 8,
+        "step": 26,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "12345654321"
+        }
+      }
+    ],
+    "id": 957,
+    "task_id": 321,
+    "exist_function": [
+      "find_demlo"
+    ]
+  },
+  {
+    "code": "def find_demlo(s): \r\n\tl = len(s) \r\n\tres = \"\" \r\n\tfor i in range(1,l+1): \r\n\t\tres = res + str(i) \r\n\tfor i in range(l-1,0,-1): \r\n\t\tres = res + str(i) \r\n\treturn res",
+    "entry_point": "find_demlo",
+    "input": [
+      "1111"
+    ],
+    "output": "1234321",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "s": "1111"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "l": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "res": ""
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1"
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12"
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123"
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234"
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12343"
+        }
+      },
+      {
+        "line": 6,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123432"
+        }
+      },
+      {
+        "line": 6,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234321"
+        }
+      },
+      {
+        "line": 8,
+        "step": 18,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "1234321"
+        }
+      }
+    ],
+    "id": 958,
+    "task_id": 321,
+    "exist_function": [
+      "find_demlo"
+    ]
+  },
+  {
+    "code": "def find_demlo(s): \r\n\tl = len(s) \r\n\tres = \"\" \r\n\tfor i in range(1,l+1): \r\n\t\tres = res + str(i) \r\n\tfor i in range(l-1,0,-1): \r\n\t\tres = res + str(i) \r\n\treturn res",
+    "entry_point": "find_demlo",
+    "input": [
+      "13333122222"
+    ],
+    "output": "123456789101110987654321",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "s": "13333122222"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "l": 11
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "res": ""
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1"
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12"
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123"
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234"
+        }
+      },
+      {
+        "line": 4,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 5,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12345"
+        }
+      },
+      {
+        "line": 4,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 5,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123456"
+        }
+      },
+      {
+        "line": 4,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 7
+        }
+      },
+      {
+        "line": 5,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234567"
+        }
+      },
+      {
+        "line": 4,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 8
+        }
+      },
+      {
+        "line": 5,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12345678"
+        }
+      },
+      {
+        "line": 4,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 9
+        }
+      },
+      {
+        "line": 5,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123456789"
+        }
+      },
+      {
+        "line": 4,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 10
+        }
+      },
+      {
+        "line": 5,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12345678910"
+        }
+      },
+      {
+        "line": 4,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 11
+        }
+      },
+      {
+        "line": 5,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234567891011"
+        }
+      },
+      {
+        "line": 6,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 10
+        }
+      },
+      {
+        "line": 7,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123456789101110"
+        }
+      },
+      {
+        "line": 6,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 9
+        }
+      },
+      {
+        "line": 7,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234567891011109"
+        }
+      },
+      {
+        "line": 6,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 8
+        }
+      },
+      {
+        "line": 7,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12345678910111098"
+        }
+      },
+      {
+        "line": 6,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 7
+        }
+      },
+      {
+        "line": 7,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123456789101110987"
+        }
+      },
+      {
+        "line": 6,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 7,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234567891011109876"
+        }
+      },
+      {
+        "line": 6,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 7,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12345678910111098765"
+        }
+      },
+      {
+        "line": 6,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123456789101110987654"
+        }
+      },
+      {
+        "line": 6,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 7,
+        "step": 41,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "1234567891011109876543"
+        }
+      },
+      {
+        "line": 6,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 43,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "12345678910111098765432"
+        }
+      },
+      {
+        "line": 6,
+        "step": 44,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "123456789101110987654321"
+        }
+      },
+      {
+        "line": 8,
+        "step": 46,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "123456789101110987654321"
+        }
+      }
+    ],
+    "id": 959,
+    "task_id": 321,
+    "exist_function": [
+      "find_demlo"
+    ]
+  },
+  {
+    "code": "def position_min(list1):\r\n    min_val = min(list1)\r\n    min_result = [i for i, j in enumerate(list1) if j == min_val]\r\n    return min_result",
+    "entry_point": "position_min",
+    "input": [
+      [
+        12,
+        33,
+        23,
+        10,
+        67,
+        89,
+        45,
+        667,
+        23,
+        12,
+        11,
+        10,
+        54
+      ]
+    ],
+    "output": [
+      3,
+      11
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "list1": [
+            12,
+            33,
+            23,
+            10,
+            67,
+            89,
+            45,
+            667,
+            23,
+            12,
+            11,
+            10,
+            54
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "min_val": 10
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "min_result": [
+            3,
+            11
+          ]
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            3,
+            11
+          ]
+        }
+      }
+    ],
+    "id": 960,
+    "task_id": 322,
+    "exist_function": [
+      "position_min"
+    ]
+  },
+  {
+    "code": "def position_min(list1):\r\n    min_val = min(list1)\r\n    min_result = [i for i, j in enumerate(list1) if j == min_val]\r\n    return min_result",
+    "entry_point": "position_min",
+    "input": [
+      [
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5
+      ]
+    ],
+    "output": [
+      0
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "list1": [
+            1,
+            2,
+            2,
+            2,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "min_val": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "min_result": [
+            0
+          ]
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            0
+          ]
+        }
+      }
+    ],
+    "id": 961,
+    "task_id": 322,
+    "exist_function": [
+      "position_min"
+    ]
+  },
+  {
+    "code": "def position_min(list1):\r\n    min_val = min(list1)\r\n    min_result = [i for i, j in enumerate(list1) if j == min_val]\r\n    return min_result",
+    "entry_point": "position_min",
+    "input": [
+      [
+        2,
+        1,
+        5,
+        6,
+        8,
+        3,
+        4,
+        9,
+        10,
+        11,
+        8,
+        12
+      ]
+    ],
+    "output": [
+      1
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "list1": [
+            2,
+            1,
+            5,
+            6,
+            8,
+            3,
+            4,
+            9,
+            10,
+            11,
+            8,
+            12
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "min_val": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "min_result": [
+            1
+          ]
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            1
+          ]
+        }
+      }
+    ],
+    "id": 962,
+    "task_id": 322,
+    "exist_function": [
+      "position_min"
+    ]
+  },
+  {
+    "code": "def right_rotate(arr, n, out_of_place, cur):\r\n\ttemp = arr[cur]\r\n\tfor i in range(cur, out_of_place, -1):\r\n\t\tarr[i] = arr[i - 1]\r\n\tarr[out_of_place] = temp\r\n\treturn arr\r\ndef re_arrange(arr, n):\r\n\tout_of_place = -1\r\n\tfor index in range(n):\r\n\t\tif (out_of_place >= 0):\r\n\t\t\tif ((arr[index] >= 0 and arr[out_of_place] < 0) or\r\n\t\t\t(arr[index] < 0 and arr[out_of_place] >= 0)):\r\n\t\t\t\tarr = right_rotate(arr, n, out_of_place, index)\r\n\t\t\t\tif (index-out_of_place > 2):\r\n\t\t\t\t\tout_of_place += 2\r\n\t\t\t\telse:\r\n\t\t\t\t\tout_of_place = - 1\r\n\t\tif (out_of_place == -1):\r\n\t\t\tif ((arr[index] >= 0 and index % 2 == 0) or\r\n\t\t\t (arr[index] < 0 and index % 2 == 1)):\r\n\t\t\t\tout_of_place = index\r\n\treturn arr",
+    "entry_point": "re_arrange",
+    "input": [
+      [
+        -5,
+        5,
+        -2,
+        2,
+        -8,
+        4,
+        7,
+        1,
+        8,
+        0
+      ],
+      10
+    ],
+    "output": [
+      -5,
+      5,
+      -2,
+      2,
+      -8,
+      4,
+      7,
+      1,
+      8,
+      0
+    ],
+    "traces": [
+      {
+        "line": 7,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            -5,
+            -2,
+            5,
+            2,
+            4,
+            7,
+            1,
+            8,
+            0,
+            -8
+          ],
+          "n": 10
+        }
+      },
+      {
+        "line": 8,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": -1
+        }
+      },
+      {
+        "line": 9,
+        "step": "3~4",
+        "action": "LOOP",
+        "vars": {
+          "index": "0→1"
+        }
+      },
+      {
+        "line": 21,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 1
+        }
+      },
+      {
+        "line": 9,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "index": 2
+        }
+      },
+      {
+        "line": 13,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "arr[2]": -2,
+          "arr[1]": 5
+        }
+      },
+      {
+        "line": 17,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": -1
+        }
+      },
+      {
+        "line": 9,
+        "step": "9~10",
+        "action": "LOOP",
+        "vars": {
+          "index": "3→4"
+        }
+      },
+      {
+        "line": 21,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 4
+        }
+      },
+      {
+        "line": 9,
+        "step": "12~16",
+        "action": "LOOP",
+        "vars": {
+          "index": "5→9"
+        }
+      },
+      {
+        "line": 13,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "arr[8]": 8,
+          "arr[4]": -8,
+          "arr[5]": 4,
+          "arr[6]": 7,
+          "arr[7]": 1,
+          "arr[9]": 0
+        }
+      },
+      {
+        "line": 15,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 6
+        }
+      },
+      {
+        "line": 22,
+        "step": 19,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            -5,
+            5,
+            -2,
+            2,
+            -8,
+            4,
+            7,
+            1,
+            8,
+            0
+          ]
+        }
+      }
+    ],
+    "id": 963,
+    "task_id": 323,
+    "exist_function": [
+      "right_rotate",
+      "re_arrange"
+    ]
+  },
+  {
+    "code": "def right_rotate(arr, n, out_of_place, cur):\r\n\ttemp = arr[cur]\r\n\tfor i in range(cur, out_of_place, -1):\r\n\t\tarr[i] = arr[i - 1]\r\n\tarr[out_of_place] = temp\r\n\treturn arr\r\ndef re_arrange(arr, n):\r\n\tout_of_place = -1\r\n\tfor index in range(n):\r\n\t\tif (out_of_place >= 0):\r\n\t\t\tif ((arr[index] >= 0 and arr[out_of_place] < 0) or\r\n\t\t\t(arr[index] < 0 and arr[out_of_place] >= 0)):\r\n\t\t\t\tarr = right_rotate(arr, n, out_of_place, index)\r\n\t\t\t\tif (index-out_of_place > 2):\r\n\t\t\t\t\tout_of_place += 2\r\n\t\t\t\telse:\r\n\t\t\t\t\tout_of_place = - 1\r\n\t\tif (out_of_place == -1):\r\n\t\t\tif ((arr[index] >= 0 and index % 2 == 0) or\r\n\t\t\t (arr[index] < 0 and index % 2 == 1)):\r\n\t\t\t\tout_of_place = index\r\n\treturn arr",
+    "entry_point": "re_arrange",
+    "input": [
+      [
+        -4,
+        1,
+        -1,
+        2,
+        3,
+        4
+      ],
+      6
+    ],
+    "output": [
+      -4,
+      1,
+      -1,
+      2,
+      3,
+      4
+    ],
+    "traces": [
+      {
+        "line": 7,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            1,
+            2,
+            3,
+            -4,
+            -1,
+            4
+          ],
+          "n": 6
+        }
+      },
+      {
+        "line": 8,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": -1
+        }
+      },
+      {
+        "line": 9,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "index": 0
+        }
+      },
+      {
+        "line": 21,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 0
+        }
+      },
+      {
+        "line": 9,
+        "step": "5~7",
+        "action": "LOOP",
+        "vars": {
+          "index": "1→3"
+        }
+      },
+      {
+        "line": 13,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "arr[3]": 3,
+          "arr[1]": 1,
+          "arr[2]": 2,
+          "arr[0]": -4
+        }
+      },
+      {
+        "line": 15,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 2
+        }
+      },
+      {
+        "line": 9,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "index": 4
+        }
+      },
+      {
+        "line": 13,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "arr[4]": 3,
+          "arr[3]": 2,
+          "arr[2]": -1
+        }
+      },
+      {
+        "line": 17,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": -1
+        }
+      },
+      {
+        "line": 21,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 4
+        }
+      },
+      {
+        "line": 9,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "index": 5
+        }
+      },
+      {
+        "line": 22,
+        "step": 15,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            -4,
+            1,
+            -1,
+            2,
+            3,
+            4
+          ]
+        }
+      }
+    ],
+    "id": 964,
+    "task_id": 323,
+    "exist_function": [
+      "right_rotate",
+      "re_arrange"
+    ]
+  },
+  {
+    "code": "def right_rotate(arr, n, out_of_place, cur):\r\n\ttemp = arr[cur]\r\n\tfor i in range(cur, out_of_place, -1):\r\n\t\tarr[i] = arr[i - 1]\r\n\tarr[out_of_place] = temp\r\n\treturn arr\r\ndef re_arrange(arr, n):\r\n\tout_of_place = -1\r\n\tfor index in range(n):\r\n\t\tif (out_of_place >= 0):\r\n\t\t\tif ((arr[index] >= 0 and arr[out_of_place] < 0) or\r\n\t\t\t(arr[index] < 0 and arr[out_of_place] >= 0)):\r\n\t\t\t\tarr = right_rotate(arr, n, out_of_place, index)\r\n\t\t\t\tif (index-out_of_place > 2):\r\n\t\t\t\t\tout_of_place += 2\r\n\t\t\t\telse:\r\n\t\t\t\t\tout_of_place = - 1\r\n\t\tif (out_of_place == -1):\r\n\t\t\tif ((arr[index] >= 0 and index % 2 == 0) or\r\n\t\t\t (arr[index] < 0 and index % 2 == 1)):\r\n\t\t\t\tout_of_place = index\r\n\treturn arr",
+    "entry_point": "re_arrange",
+    "input": [
+      [
+        -4,
+        4,
+        -3,
+        7,
+        -9,
+        9,
+        77,
+        5
+      ],
+      8
+    ],
+    "output": [
+      -4,
+      4,
+      -3,
+      7,
+      -9,
+      9,
+      77,
+      5
+    ],
+    "traces": [
+      {
+        "line": 7,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "arr": [
+            4,
+            7,
+            9,
+            77,
+            -4,
+            5,
+            -3,
+            -9
+          ],
+          "n": 8
+        }
+      },
+      {
+        "line": 8,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": -1
+        }
+      },
+      {
+        "line": 9,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "index": 0
+        }
+      },
+      {
+        "line": 21,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 0
+        }
+      },
+      {
+        "line": 9,
+        "step": "5~8",
+        "action": "LOOP",
+        "vars": {
+          "index": "1→4"
+        }
+      },
+      {
+        "line": 13,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "arr[4]": 77,
+          "arr[3]": 9,
+          "arr[1]": 4,
+          "arr[2]": 7,
+          "arr[0]": -4
+        }
+      },
+      {
+        "line": 15,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 2
+        }
+      },
+      {
+        "line": 9,
+        "step": "11~12",
+        "action": "LOOP",
+        "vars": {
+          "index": "5→6"
+        }
+      },
+      {
+        "line": 13,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "arr[4]": 9,
+          "arr[3]": 7,
+          "arr[5]": 77,
+          "arr[6]": 5,
+          "arr[2]": -3
+        }
+      },
+      {
+        "line": 15,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 4
+        }
+      },
+      {
+        "line": 9,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "index": 7
+        }
+      },
+      {
+        "line": 13,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "arr[4]": -9,
+          "arr[5]": 9,
+          "arr[6]": 77,
+          "arr[7]": 5
+        }
+      },
+      {
+        "line": 15,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "out_of_place": 6
+        }
+      },
+      {
+        "line": 22,
+        "step": 18,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            -4,
+            4,
+            -3,
+            7,
+            -9,
+            9,
+            77,
+            5
+          ]
+        }
+      }
+    ],
+    "id": 965,
+    "task_id": 323,
+    "exist_function": [
+      "right_rotate",
+      "re_arrange"
+    ]
+  },
+  {
+    "code": "def sum_of_alternates(test_tuple):\r\n  sum1 = 0\r\n  sum2 = 0\r\n  for idx, ele in enumerate(test_tuple):\r\n    if idx % 2:\r\n      sum1 += ele\r\n    else:\r\n      sum2 += ele\r\n  return ((sum1),(sum2))",
+    "entry_point": "sum_of_alternates",
+    "input": [
+      "(5, 6, 3, 6, 10, 34)"
+    ],
+    "output": "(46, 18)",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "test_tuple": "(5, 6, 3, 6, 10, 34)"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 5,
+          "idx": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 5
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 6,
+          "idx": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 3,
+          "idx": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 8
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 6,
+          "idx": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 12
+        }
+      },
+      {
+        "line": 4,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 10,
+          "idx": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 18
+        }
+      },
+      {
+        "line": 4,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 34,
+          "idx": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 46
+        }
+      },
+      {
+        "line": 9,
+        "step": 16,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "(46, 18)"
+        }
+      }
+    ],
+    "id": 966,
+    "task_id": 324,
+    "exist_function": [
+      "sum_of_alternates"
+    ]
+  },
+  {
+    "code": "def sum_of_alternates(test_tuple):\r\n  sum1 = 0\r\n  sum2 = 0\r\n  for idx, ele in enumerate(test_tuple):\r\n    if idx % 2:\r\n      sum1 += ele\r\n    else:\r\n      sum2 += ele\r\n  return ((sum1),(sum2))",
+    "entry_point": "sum_of_alternates",
+    "input": [
+      "(1, 2, 3, 4, 5)"
+    ],
+    "output": "(6, 9)",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "test_tuple": "(1, 2, 3, 4, 5)"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 1,
+          "idx": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 2,
+          "idx": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 3,
+          "idx": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 4,
+          "idx": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 5,
+          "idx": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 9
+        }
+      },
+      {
+        "line": 9,
+        "step": 14,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "(6, 9)"
+        }
+      }
+    ],
+    "id": 967,
+    "task_id": 324,
+    "exist_function": [
+      "sum_of_alternates"
+    ]
+  },
+  {
+    "code": "def sum_of_alternates(test_tuple):\r\n  sum1 = 0\r\n  sum2 = 0\r\n  for idx, ele in enumerate(test_tuple):\r\n    if idx % 2:\r\n      sum1 += ele\r\n    else:\r\n      sum2 += ele\r\n  return ((sum1),(sum2))",
+    "entry_point": "sum_of_alternates",
+    "input": [
+      "(6, 7, 8, 9, 4, 5)"
+    ],
+    "output": "(21, 18)",
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "test_tuple": "(6, 7, 8, 9, 4, 5)"
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 6,
+          "idx": 0
+        }
+      },
+      {
+        "line": 8,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 6
+        }
+      },
+      {
+        "line": 4,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 7,
+          "idx": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 7
+        }
+      },
+      {
+        "line": 4,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 8,
+          "idx": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 14
+        }
+      },
+      {
+        "line": 4,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 9,
+          "idx": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 16
+        }
+      },
+      {
+        "line": 4,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 4,
+          "idx": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "sum2": 18
+        }
+      },
+      {
+        "line": 4,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "ele": 5,
+          "idx": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "sum1": 21
+        }
+      },
+      {
+        "line": 9,
+        "step": 16,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "(21, 18)"
+        }
+      }
+    ],
+    "id": 968,
+    "task_id": 324,
+    "exist_function": [
+      "sum_of_alternates"
+    ]
+  },
+  {
+    "code": "def get_Min_Squares(n):\r\n    if n <= 3:\r\n        return n;\r\n    res = n \r\n    for x in range(1,n + 1):\r\n        temp = x * x;\r\n        if temp > n:\r\n            break\r\n        else:\r\n            res = min(res,1 + get_Min_Squares(n  - temp)) \r\n    return res;",
+    "entry_point": "get_Min_Squares",
+    "input": [
+      6
+    ],
+    "output": 3,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 4,
+          "res": 3,
+          "n": 6,
+          "x": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 9
+        }
+      },
+      {
+        "line": 11,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 3
+        }
+      }
+    ],
+    "id": 969,
+    "task_id": 325,
+    "exist_function": [
+      "get_Min_Squares"
+    ]
+  },
+  {
+    "code": "def get_Min_Squares(n):\r\n    if n <= 3:\r\n        return n;\r\n    res = n \r\n    for x in range(1,n + 1):\r\n        temp = x * x;\r\n        if temp > n:\r\n            break\r\n        else:\r\n            res = min(res,1 + get_Min_Squares(n  - temp)) \r\n    return res;",
+    "entry_point": "get_Min_Squares",
+    "input": [
+      4
+    ],
+    "output": 1,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 4,
+          "res": 1,
+          "n": 4,
+          "x": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": 9
+        }
+      },
+      {
+        "line": 11,
+        "step": 5,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 1
+        }
+      }
+    ],
+    "id": 971,
+    "task_id": 325,
+    "exist_function": [
+      "get_Min_Squares"
+    ]
+  },
+  {
+    "code": "from collections import defaultdict \r\n\r\ndef most_occurrences(test_list):\r\n  temp = defaultdict(int)\r\n  for sub in test_list:\r\n    for wrd in sub.split():\r\n      temp[wrd] += 1\r\n  res = max(temp, key=temp.get)\r\n  return (str(res))",
+    "entry_point": "most_occurrences",
+    "input": [
+      [
+        "UTS is best for RTF",
+        "RTF love UTS",
+        "UTS is best"
+      ]
+    ],
+    "output": "UTS",
+    "traces": [
+      {
+        "line": 3,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "test_list": [
+            "UTS is best for RTF",
+            "RTF love UTS",
+            "UTS is best"
+          ]
+        }
+      },
+      {
+        "line": 4,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": {}
+        }
+      },
+      {
+        "line": 5,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "sub": "UTS is best for RTF"
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "UTS"
+        }
+      },
+      {
+        "line": 7,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.UTS": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "is"
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.is": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "best"
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.best": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "for"
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.for": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "RTF"
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.RTF": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "sub": "RTF love UTS"
+        }
+      },
+      {
+        "line": 7,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.RTF": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "love"
+        }
+      },
+      {
+        "line": 7,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.love": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "UTS"
+        }
+      },
+      {
+        "line": 7,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.UTS": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "sub": "UTS is best"
+        }
+      },
+      {
+        "line": 7,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.UTS": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "is"
+        }
+      },
+      {
+        "line": 7,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.is": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "best"
+        }
+      },
+      {
+        "line": 7,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.best": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "UTS"
+        }
+      },
+      {
+        "line": 9,
+        "step": 27,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "UTS"
+        }
+      }
+    ],
+    "id": 972,
+    "task_id": 326,
+    "exist_function": [
+      "most_occurrences"
+    ]
+  },
+  {
+    "code": "from collections import defaultdict \r\n\r\ndef most_occurrences(test_list):\r\n  temp = defaultdict(int)\r\n  for sub in test_list:\r\n    for wrd in sub.split():\r\n      temp[wrd] += 1\r\n  res = max(temp, key=temp.get)\r\n  return (str(res))",
+    "entry_point": "most_occurrences",
+    "input": [
+      [
+        "Its been a great year",
+        "this year is so worse",
+        "this year is okay"
+      ]
+    ],
+    "output": "year",
+    "traces": [
+      {
+        "line": 3,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "test_list": [
+            "Its been a great year",
+            "this year is so worse",
+            "this year is okay"
+          ]
+        }
+      },
+      {
+        "line": 4,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": {}
+        }
+      },
+      {
+        "line": 5,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "sub": "Its been a great year"
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "Its"
+        }
+      },
+      {
+        "line": 7,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.Its": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "been"
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.been": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "a"
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.a": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "great"
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.great": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "year"
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.year": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "sub": "this year is so worse"
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "this"
+        }
+      },
+      {
+        "line": 7,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.this": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "year"
+        }
+      },
+      {
+        "line": 7,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.year": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "is"
+        }
+      },
+      {
+        "line": 7,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.is": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "so"
+        }
+      },
+      {
+        "line": 7,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.so": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "worse"
+        }
+      },
+      {
+        "line": 7,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.worse": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "sub": "this year is okay"
+        }
+      },
+      {
+        "line": 6,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "this"
+        }
+      },
+      {
+        "line": 7,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.this": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "year"
+        }
+      },
+      {
+        "line": 7,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.year": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "is"
+        }
+      },
+      {
+        "line": 7,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.is": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "okay"
+        }
+      },
+      {
+        "line": 7,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.okay": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "year"
+        }
+      },
+      {
+        "line": 9,
+        "step": 35,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "year"
+        }
+      }
+    ],
+    "id": 973,
+    "task_id": 326,
+    "exist_function": [
+      "most_occurrences"
+    ]
+  },
+  {
+    "code": "from collections import defaultdict \r\n\r\ndef most_occurrences(test_list):\r\n  temp = defaultdict(int)\r\n  for sub in test_list:\r\n    for wrd in sub.split():\r\n      temp[wrd] += 1\r\n  res = max(temp, key=temp.get)\r\n  return (str(res))",
+    "entry_point": "most_occurrences",
+    "input": [
+      [
+        "Families can be reunited",
+        "people can be reunited",
+        "Tasks can be achieved "
+      ]
+    ],
+    "output": "can",
+    "traces": [
+      {
+        "line": 3,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "test_list": [
+            "Families can be reunited",
+            "people can be reunited",
+            "Tasks can be achieved "
+          ]
+        }
+      },
+      {
+        "line": 4,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "temp": {}
+        }
+      },
+      {
+        "line": 5,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "sub": "Families can be reunited"
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "Families"
+        }
+      },
+      {
+        "line": 7,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.Families": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "can"
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.can": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "be"
+        }
+      },
+      {
+        "line": 7,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.be": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "reunited"
+        }
+      },
+      {
+        "line": 7,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.reunited": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "sub": "people can be reunited"
+        }
+      },
+      {
+        "line": 6,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "people"
+        }
+      },
+      {
+        "line": 7,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.people": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "can"
+        }
+      },
+      {
+        "line": 7,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.can": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "be"
+        }
+      },
+      {
+        "line": 7,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.be": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "reunited"
+        }
+      },
+      {
+        "line": 7,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.reunited": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "sub": "Tasks can be achieved "
+        }
+      },
+      {
+        "line": 6,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "Tasks"
+        }
+      },
+      {
+        "line": 7,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.Tasks": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "can"
+        }
+      },
+      {
+        "line": 7,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.can": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "be"
+        }
+      },
+      {
+        "line": 7,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.be": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "wrd": "achieved"
+        }
+      },
+      {
+        "line": 7,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "temp.achieved": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "res": "can"
+        }
+      },
+      {
+        "line": 9,
+        "step": 31,
+        "action": "RETURN",
+        "vars": {
+          "__return__": "can"
+        }
+      }
+    ],
+    "id": 974,
+    "task_id": 326,
+    "exist_function": [
+      "most_occurrences"
+    ]
+  },
+  {
+    "code": "def neg_count(list):\r\n  neg_count= 0\r\n  for num in list: \r\n    if num <= 0: \r\n      neg_count += 1\r\n  return neg_count",
+    "entry_point": "neg_count",
+    "input": [
+      [
+        -1,
+        -2,
+        3,
+        -4,
+        -5
+      ]
+    ],
+    "output": 4,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "list": [
+            -1,
+            -2,
+            3,
+            -4,
+            -5
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "neg_count": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -1
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "neg_count": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -2
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "neg_count": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -4
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "neg_count": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -5
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "neg_count": 4
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 4
+        }
+      }
+    ],
+    "id": 981,
+    "task_id": 329,
+    "exist_function": [
+      "neg_count"
+    ]
+  },
+  {
+    "code": "def neg_count(list):\r\n  neg_count= 0\r\n  for num in list: \r\n    if num <= 0: \r\n      neg_count += 1\r\n  return neg_count",
+    "entry_point": "neg_count",
+    "input": [
+      [
+        1,
+        2,
+        -3,
+        -10,
+        20
+      ]
+    ],
+    "output": 2,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "list": [
+            1,
+            2,
+            -3,
+            -10,
+            20
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "neg_count": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": "3~4",
+        "action": "LOOP",
+        "vars": {
+          "num": "1→2"
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -3
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "neg_count": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "num": -10
+        }
+      },
+      {
+        "line": 5,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "neg_count": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "num": 20
+        }
+      },
+      {
+        "line": 6,
+        "step": 10,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2
+        }
+      }
+    ],
+    "id": 983,
+    "task_id": 329,
+    "exist_function": [
+      "neg_count"
+    ]
+  },
+  {
+    "code": "def count_unset_bits(n): \r\n    count = 0\r\n    x = 1\r\n    while(x < n + 1): \r\n        if ((x & n) == 0): \r\n            count += 1\r\n        x = x << 1\r\n    return count",
+    "entry_point": "count_unset_bits",
+    "input": [
+      2
+    ],
+    "output": 1,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 2
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 7,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 1
+        }
+      }
+    ],
+    "id": 987,
+    "task_id": 331,
+    "exist_function": [
+      "count_unset_bits"
+    ]
+  },
+  {
+    "code": "def count_unset_bits(n): \r\n    count = 0\r\n    x = 1\r\n    while(x < n + 1): \r\n        if ((x & n) == 0): \r\n            count += 1\r\n        x = x << 1\r\n    return count",
+    "entry_point": "count_unset_bits",
+    "input": [
+      4
+    ],
+    "output": 2,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 4
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 2
+        }
+      },
+      {
+        "line": 6,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 8
+        }
+      },
+      {
+        "line": 8,
+        "step": 9,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2
+        }
+      }
+    ],
+    "id": 988,
+    "task_id": 331,
+    "exist_function": [
+      "count_unset_bits"
+    ]
+  },
+  {
+    "code": "def count_unset_bits(n): \r\n    count = 0\r\n    x = 1\r\n    while(x < n + 1): \r\n        if ((x & n) == 0): \r\n            count += 1\r\n        x = x << 1\r\n    return count",
+    "entry_point": "count_unset_bits",
+    "input": [
+      6
+    ],
+    "output": 1,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "n": 6
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 1
+        }
+      },
+      {
+        "line": 6,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "count": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 4
+        }
+      },
+      {
+        "line": 7,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "x": 8
+        }
+      },
+      {
+        "line": 8,
+        "step": 8,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 1
+        }
+      }
+    ],
+    "id": 989,
+    "task_id": 331,
+    "exist_function": [
+      "count_unset_bits"
+    ]
+  },
+  {
+    "code": "def find_missing(ar,N): \r\n    l = 0\r\n    r = N - 1\r\n    while (l <= r):  \r\n        mid = (l + r) / 2\r\n        mid= int (mid) \r\n        if (ar[mid] != mid + 1 and ar[mid - 1] == mid): \r\n            return (mid + 1)  \r\n        elif (ar[mid] != mid + 1): \r\n            r = mid - 1 \r\n        else: \r\n            l = mid + 1\r\n    return (-1)",
+    "entry_point": "find_missing",
+    "input": [
+      [
+        1,
+        3,
+        4,
+        5
+      ],
+      4
+    ],
+    "output": 2,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "ar": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "N": 4
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "l": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "r": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 1.5
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 6,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 2
+        }
+      }
+    ],
+    "id": 100,
+    "task_id": 34,
+    "exist_function": [
+      "find_missing"
+    ]
+  },
+  {
+    "code": "def find_missing(ar,N): \r\n    l = 0\r\n    r = N - 1\r\n    while (l <= r):  \r\n        mid = (l + r) / 2\r\n        mid= int (mid) \r\n        if (ar[mid] != mid + 1 and ar[mid - 1] == mid): \r\n            return (mid + 1)  \r\n        elif (ar[mid] != mid + 1): \r\n            r = mid - 1 \r\n        else: \r\n            l = mid + 1\r\n    return (-1)",
+    "entry_point": "find_missing",
+    "input": [
+      [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      5
+    ],
+    "output": 4,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "ar": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "N": 5
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "l": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "r": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 2.0
+        }
+      },
+      {
+        "line": 12,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "l": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 3.5
+        }
+      },
+      {
+        "line": 6,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "mid": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 8,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 4
+        }
+      }
+    ],
+    "id": 101,
+    "task_id": 34,
+    "exist_function": [
+      "find_missing"
+    ]
+  },
+  {
+    "code": "def find_Nth_Digit(p,q,N) :  \r\n    while (N > 0) : \r\n        N -= 1;  \r\n        p *= 10;  \r\n        res = p // q;  \r\n        p %= q;  \r\n    return res;",
+    "entry_point": "find_Nth_Digit",
+    "input": [
+      1,
+      2,
+      1
+    ],
+    "output": 5,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "p": 1,
+          "q": 2,
+          "N": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "N": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 10
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 5
+        }
+      }
+    ],
+    "id": 105,
+    "task_id": 36,
+    "exist_function": [
+      "find_Nth_Digit"
+    ]
+  },
+  {
+    "code": "def find_Nth_Digit(p,q,N) :  \r\n    while (N > 0) : \r\n        N -= 1;  \r\n        p *= 10;  \r\n        res = p // q;  \r\n        p %= q;  \r\n    return res;",
+    "entry_point": "find_Nth_Digit",
+    "input": [
+      3,
+      5,
+      1
+    ],
+    "output": 6,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "p": 3,
+          "q": 5,
+          "N": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "N": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 30
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 6
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 0
+        }
+      },
+      {
+        "line": 7,
+        "step": 6,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 6
+        }
+      }
+    ],
+    "id": 106,
+    "task_id": 36,
+    "exist_function": [
+      "find_Nth_Digit"
+    ]
+  },
+  {
+    "code": "def find_Nth_Digit(p,q,N) :  \r\n    while (N > 0) : \r\n        N -= 1;  \r\n        p *= 10;  \r\n        res = p // q;  \r\n        p %= q;  \r\n    return res;",
+    "entry_point": "find_Nth_Digit",
+    "input": [
+      5,
+      6,
+      5
+    ],
+    "output": 3,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "p": 5,
+          "q": 6,
+          "N": 5
+        }
+      },
+      {
+        "line": 3,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "N": 4
+        }
+      },
+      {
+        "line": 4,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 50
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 8
+        }
+      },
+      {
+        "line": 6,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "N": 3
+        }
+      },
+      {
+        "line": 4,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 20
+        }
+      },
+      {
+        "line": 5,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "res": 3
+        }
+      },
+      {
+        "line": 6,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "N": 2
+        }
+      },
+      {
+        "line": 4,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 20
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "N": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 20
+        }
+      },
+      {
+        "line": 6,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "N": 0
+        }
+      },
+      {
+        "line": 4,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 20
+        }
+      },
+      {
+        "line": 6,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "p": 2
+        }
+      },
+      {
+        "line": 7,
+        "step": 19,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 3
+        }
+      }
+    ],
+    "id": 107,
+    "task_id": 36,
+    "exist_function": [
+      "find_Nth_Digit"
+    ]
+  },
+  {
+    "code": "def sort_mixed_list(mixed_list):\r\n    int_part = sorted([i for i in mixed_list if type(i) is int])\r\n    str_part = sorted([i for i in mixed_list if type(i) is str])\r\n    return int_part + str_part",
+    "entry_point": "sort_mixed_list",
+    "input": [
+      [
+        19,
+        "red",
+        12,
+        "green",
+        "blue",
+        10,
+        "white",
+        "green",
+        1
+      ]
+    ],
+    "output": [
+      1,
+      10,
+      12,
+      19,
+      "blue",
+      "green",
+      "green",
+      "red",
+      "white"
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "mixed_list": [
+            19,
+            "red",
+            12,
+            "green",
+            "blue",
+            10,
+            "white",
+            "green",
+            1
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "int_part": [
+            1,
+            10,
+            12,
+            19
+          ]
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "str_part": [
+            "blue",
+            "green",
+            "green",
+            "red",
+            "white"
+          ]
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            1,
+            10,
+            12,
+            19,
+            "blue",
+            "green",
+            "green",
+            "red",
+            "white"
+          ]
+        }
+      }
+    ],
+    "id": 108,
+    "task_id": 37,
+    "exist_function": [
+      "sort_mixed_list"
+    ]
+  },
+  {
+    "code": "def sort_mixed_list(mixed_list):\r\n    int_part = sorted([i for i in mixed_list if type(i) is int])\r\n    str_part = sorted([i for i in mixed_list if type(i) is str])\r\n    return int_part + str_part",
+    "entry_point": "sort_mixed_list",
+    "input": [
+      [
+        19,
+        "red",
+        12,
+        "green",
+        "blue",
+        10,
+        "white",
+        "green",
+        1
+      ]
+    ],
+    "output": [
+      1,
+      10,
+      12,
+      19,
+      "blue",
+      "green",
+      "green",
+      "red",
+      "white"
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "mixed_list": [
+            19,
+            "red",
+            12,
+            "green",
+            "blue",
+            10,
+            "white",
+            "green",
+            1
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "int_part": [
+            1,
+            10,
+            12,
+            19
+          ]
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "str_part": [
+            "blue",
+            "green",
+            "green",
+            "red",
+            "white"
+          ]
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            1,
+            10,
+            12,
+            19,
+            "blue",
+            "green",
+            "green",
+            "red",
+            "white"
+          ]
+        }
+      }
+    ],
+    "id": 109,
+    "task_id": 37,
+    "exist_function": [
+      "sort_mixed_list"
+    ]
+  },
+  {
+    "code": "def sort_mixed_list(mixed_list):\r\n    int_part = sorted([i for i in mixed_list if type(i) is int])\r\n    str_part = sorted([i for i in mixed_list if type(i) is str])\r\n    return int_part + str_part",
+    "entry_point": "sort_mixed_list",
+    "input": [
+      [
+        19,
+        "red",
+        12,
+        "green",
+        "blue",
+        10,
+        "white",
+        "green",
+        1
+      ]
+    ],
+    "output": [
+      1,
+      10,
+      12,
+      19,
+      "blue",
+      "green",
+      "green",
+      "red",
+      "white"
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "mixed_list": [
+            19,
+            "red",
+            12,
+            "green",
+            "blue",
+            10,
+            "white",
+            "green",
+            1
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "int_part": [
+            1,
+            10,
+            12,
+            19
+          ]
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "str_part": [
+            "blue",
+            "green",
+            "green",
+            "red",
+            "white"
+          ]
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            1,
+            10,
+            12,
+            19,
+            "blue",
+            "green",
+            "green",
+            "red",
+            "white"
+          ]
+        }
+      }
+    ],
+    "id": 110,
+    "task_id": 37,
+    "exist_function": [
+      "sort_mixed_list"
+    ]
+  },
+  {
+    "code": "def div_even_odd(list1):\r\n    first_even = next((el for el in list1 if el%2==0),-1)\r\n    first_odd = next((el for el in list1 if el%2!=0),-1)\r\n    return (first_even/first_odd)",
+    "entry_point": "div_even_odd",
+    "input": [
+      [
+        1,
+        3,
+        5,
+        7,
+        4,
+        1,
+        6,
+        8
+      ]
+    ],
+    "output": 4.0,
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "list1": [
+            1,
+            3,
+            5,
+            7,
+            4,
+            1,
+            6,
+            8
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "first_even": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "first_odd": 1
+        }
+      },
+      {
+        "line": 4,
+        "step": 4,
+        "action": "RETURN",
+        "vars": {
+          "__return__": 4.0
+        }
+      }
+    ],
+    "id": 111,
+    "task_id": 38,
+    "exist_function": [
+      "div_even_odd"
+    ]
+  }
+]

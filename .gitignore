@@ -1,4 +1,6 @@
 mbpp/trace_result/
+# mbpp/nl_result/
+mbpp/cache/
 
 __pycache__/
 *.py[cod]
