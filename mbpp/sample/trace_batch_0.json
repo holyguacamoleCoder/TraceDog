@@ -1,0 +1,2063 @@
+[
+  {
+    "code": "def counting_sort(my_list):\r\n    max_value = 0\r\n    for i in range(len(my_list)):\r\n        if my_list[i] > max_value:\r\n            max_value = my_list[i]\r\n    buckets = [0] * (max_value + 1)\r\n    for i in my_list:\r\n        buckets[i] += 1\r\n    i = 0\r\n    for j in range(max_value + 1):\r\n         for a in range(buckets[j]):\r\n             my_list[i] = j\r\n             i += 1\r\n    return my_list",
+    "entry_point": "counting_sort",
+    "input": [
+      [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        23
+      ]
+    ],
+    "output": [
+      1,
+      4,
+      5,
+      6,
+      7,
+      8,
+      23
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "my_list": [
+            1,
+            23,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 5,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 23
+        }
+      },
+      {
+        "line": 3,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 3,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 3,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 6,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "line": 7,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[1]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 23
+        }
+      },
+      {
+        "line": 8,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[23]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[4]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 8,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[5]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 8,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[6]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 7
+        }
+      },
+      {
+        "line": 8,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[7]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 8
+        }
+      },
+      {
+        "line": 8,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[8]": 1
+        }
+      },
+      {
+        "line": 9,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 10,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 10,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 11,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "a": 0
+        }
+      },
+      {
+        "line": 13,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 10,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 10,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 10,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 12,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[1]": 4
+        }
+      },
+      {
+        "line": 13,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 10,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 12,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[2]": 5
+        }
+      },
+      {
+        "line": 13,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 10,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 12,
+        "step": 41,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[3]": 6
+        }
+      },
+      {
+        "line": 13,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 10,
+        "step": 43,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 12,
+        "step": 44,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[4]": 7
+        }
+      },
+      {
+        "line": 13,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 10,
+        "step": 46,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 8
+        }
+      },
+      {
+        "line": 12,
+        "step": 47,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[5]": 8
+        }
+      },
+      {
+        "line": 13,
+        "step": 48,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 10,
+        "step": 49,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 9
+        }
+      },
+      {
+        "line": 10,
+        "step": 50,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 10
+        }
+      },
+      {
+        "line": 10,
+        "step": 51,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 11
+        }
+      },
+      {
+        "line": 10,
+        "step": 52,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 12
+        }
+      },
+      {
+        "line": 10,
+        "step": 53,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 13
+        }
+      },
+      {
+        "line": 10,
+        "step": 54,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 14
+        }
+      },
+      {
+        "line": 10,
+        "step": 55,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 15
+        }
+      },
+      {
+        "line": 10,
+        "step": 56,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 16
+        }
+      },
+      {
+        "line": 10,
+        "step": 57,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 17
+        }
+      },
+      {
+        "line": 10,
+        "step": 58,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 18
+        }
+      },
+      {
+        "line": 10,
+        "step": 59,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 19
+        }
+      },
+      {
+        "line": 10,
+        "step": 60,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 20
+        }
+      },
+      {
+        "line": 10,
+        "step": 61,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 21
+        }
+      },
+      {
+        "line": 10,
+        "step": 62,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 22
+        }
+      },
+      {
+        "line": 10,
+        "step": 63,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 23
+        }
+      },
+      {
+        "line": 12,
+        "step": 64,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[6]": 23
+        }
+      },
+      {
+        "line": 13,
+        "step": 65,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 7
+        }
+      },
+      {
+        "line": 14,
+        "step": 66,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            1,
+            4,
+            5,
+            6,
+            7,
+            8,
+            23
+          ]
+        }
+      }
+    ],
+    "id": 0,
+    "task_id": 54,
+    "exist_function": [
+      "counting_sort"
+    ]
+  },
+  {
+    "code": "def counting_sort(my_list):\r\n    max_value = 0\r\n    for i in range(len(my_list)):\r\n        if my_list[i] > max_value:\r\n            max_value = my_list[i]\r\n    buckets = [0] * (max_value + 1)\r\n    for i in my_list:\r\n        buckets[i] += 1\r\n    i = 0\r\n    for j in range(max_value + 1):\r\n         for a in range(buckets[j]):\r\n             my_list[i] = j\r\n             i += 1\r\n    return my_list",
+    "entry_point": "counting_sort",
+    "input": [
+      [
+        9,
+        12,
+        28,
+        33,
+        45,
+        69
+      ]
+    ],
+    "output": [
+      9,
+      12,
+      28,
+      33,
+      45,
+      69
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "my_list": [
+            12,
+            9,
+            28,
+            33,
+            69,
+            45
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 12
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 28
+        }
+      },
+      {
+        "line": 3,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 5,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 33
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 5,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 69
+        }
+      },
+      {
+        "line": 3,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "line": 7,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 12
+        }
+      },
+      {
+        "line": 8,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[12]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 9
+        }
+      },
+      {
+        "line": 8,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[9]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 28
+        }
+      },
+      {
+        "line": 8,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[28]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 33
+        }
+      },
+      {
+        "line": 8,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[33]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 69
+        }
+      },
+      {
+        "line": 8,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[69]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 45
+        }
+      },
+      {
+        "line": 8,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[45]": 1
+        }
+      },
+      {
+        "line": 9,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 10,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 10,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 10,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 10,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 10,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 10,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 10,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 10,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 10,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 8
+        }
+      },
+      {
+        "line": 10,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 9
+        }
+      },
+      {
+        "line": 11,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "a": 0
+        }
+      },
+      {
+        "line": 12,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[0]": 9
+        }
+      },
+      {
+        "line": 13,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 10,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 10
+        }
+      },
+      {
+        "line": 10,
+        "step": 41,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 11
+        }
+      },
+      {
+        "line": 10,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 12
+        }
+      },
+      {
+        "line": 12,
+        "step": 43,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[1]": 12
+        }
+      },
+      {
+        "line": 13,
+        "step": 44,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 10,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 13
+        }
+      },
+      {
+        "line": 10,
+        "step": 46,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 14
+        }
+      },
+      {
+        "line": 10,
+        "step": 47,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 15
+        }
+      },
+      {
+        "line": 10,
+        "step": 48,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 16
+        }
+      },
+      {
+        "line": 10,
+        "step": 49,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 17
+        }
+      },
+      {
+        "line": 10,
+        "step": 50,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 18
+        }
+      },
+      {
+        "line": 10,
+        "step": 51,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 19
+        }
+      },
+      {
+        "line": 10,
+        "step": 52,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 20
+        }
+      },
+      {
+        "line": 10,
+        "step": 53,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 21
+        }
+      },
+      {
+        "line": 10,
+        "step": 54,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 22
+        }
+      },
+      {
+        "line": 10,
+        "step": 55,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 23
+        }
+      },
+      {
+        "line": 10,
+        "step": 56,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 24
+        }
+      },
+      {
+        "line": 10,
+        "step": 57,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 25
+        }
+      },
+      {
+        "line": 10,
+        "step": 58,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 26
+        }
+      },
+      {
+        "line": 10,
+        "step": 59,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 27
+        }
+      },
+      {
+        "line": 10,
+        "step": 60,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 28
+        }
+      },
+      {
+        "line": 13,
+        "step": 61,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 10,
+        "step": 62,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 29
+        }
+      },
+      {
+        "line": 10,
+        "step": 63,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 30
+        }
+      },
+      {
+        "line": 10,
+        "step": 64,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 31
+        }
+      },
+      {
+        "line": 10,
+        "step": 65,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 32
+        }
+      },
+      {
+        "line": 10,
+        "step": 66,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 33
+        }
+      },
+      {
+        "line": 13,
+        "step": 67,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 10,
+        "step": 68,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 34
+        }
+      },
+      {
+        "line": 10,
+        "step": 69,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 35
+        }
+      },
+      {
+        "line": 10,
+        "step": 70,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 36
+        }
+      },
+      {
+        "line": 10,
+        "step": 71,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 37
+        }
+      },
+      {
+        "line": 10,
+        "step": 72,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 38
+        }
+      },
+      {
+        "line": 10,
+        "step": 73,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 39
+        }
+      },
+      {
+        "line": 10,
+        "step": 74,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 40
+        }
+      },
+      {
+        "line": 10,
+        "step": 75,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 41
+        }
+      },
+      {
+        "line": 10,
+        "step": 76,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 42
+        }
+      },
+      {
+        "line": 10,
+        "step": 77,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 43
+        }
+      },
+      {
+        "line": 10,
+        "step": 78,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 44
+        }
+      },
+      {
+        "line": 10,
+        "step": 79,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 45
+        }
+      },
+      {
+        "line": 12,
+        "step": 80,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[4]": 45
+        }
+      },
+      {
+        "line": 13,
+        "step": 81,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 10,
+        "step": 82,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 46
+        }
+      },
+      {
+        "line": 10,
+        "step": 83,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 47
+        }
+      },
+      {
+        "line": 10,
+        "step": 84,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 48
+        }
+      },
+      {
+        "line": 10,
+        "step": 85,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 49
+        }
+      },
+      {
+        "line": 10,
+        "step": 86,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 50
+        }
+      },
+      {
+        "line": 10,
+        "step": 87,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 51
+        }
+      },
+      {
+        "line": 10,
+        "step": 88,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 52
+        }
+      },
+      {
+        "line": 10,
+        "step": 89,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 53
+        }
+      },
+      {
+        "line": 10,
+        "step": 90,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 54
+        }
+      },
+      {
+        "line": 10,
+        "step": 91,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 55
+        }
+      },
+      {
+        "line": 10,
+        "step": 92,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 56
+        }
+      },
+      {
+        "line": 10,
+        "step": 93,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 57
+        }
+      },
+      {
+        "line": 10,
+        "step": 94,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 58
+        }
+      },
+      {
+        "line": 10,
+        "step": 95,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 59
+        }
+      },
+      {
+        "line": 10,
+        "step": 96,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 60
+        }
+      },
+      {
+        "line": 10,
+        "step": 97,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 61
+        }
+      },
+      {
+        "line": 10,
+        "step": 98,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 62
+        }
+      },
+      {
+        "line": 10,
+        "step": 99,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 63
+        }
+      },
+      {
+        "line": 10,
+        "step": 100,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 64
+        }
+      },
+      {
+        "line": 10,
+        "step": 101,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 65
+        }
+      },
+      {
+        "line": 10,
+        "step": 102,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 66
+        }
+      },
+      {
+        "line": 10,
+        "step": 103,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 67
+        }
+      },
+      {
+        "line": 10,
+        "step": 104,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 68
+        }
+      },
+      {
+        "line": 10,
+        "step": 105,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 69
+        }
+      },
+      {
+        "line": 12,
+        "step": 106,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[5]": 69
+        }
+      },
+      {
+        "line": 13,
+        "step": 107,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 14,
+        "step": 108,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            9,
+            12,
+            28,
+            33,
+            45,
+            69
+          ]
+        }
+      }
+    ],
+    "id": 1,
+    "task_id": 54,
+    "exist_function": [
+      "counting_sort"
+    ]
+  },
+  {
+    "code": "def counting_sort(my_list):\r\n    max_value = 0\r\n    for i in range(len(my_list)):\r\n        if my_list[i] > max_value:\r\n            max_value = my_list[i]\r\n    buckets = [0] * (max_value + 1)\r\n    for i in my_list:\r\n        buckets[i] += 1\r\n    i = 0\r\n    for j in range(max_value + 1):\r\n         for a in range(buckets[j]):\r\n             my_list[i] = j\r\n             i += 1\r\n    return my_list",
+    "entry_point": "counting_sort",
+    "input": [
+      [
+        1,
+        2,
+        3,
+        4,
+        8,
+        14
+      ]
+    ],
+    "output": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      14
+    ],
+    "traces": [
+      {
+        "line": 1,
+        "step": 1,
+        "action": "INPUT",
+        "vars": {
+          "my_list": [
+            8,
+            4,
+            14,
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "line": 2,
+        "step": 2,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 0
+        }
+      },
+      {
+        "line": 3,
+        "step": 3,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 5,
+        "step": 4,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 8
+        }
+      },
+      {
+        "line": 3,
+        "step": 5,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 3,
+        "step": 6,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 5,
+        "step": 7,
+        "action": "EXECUTE",
+        "vars": {
+          "max_value": 14
+        }
+      },
+      {
+        "line": 3,
+        "step": 8,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 3,
+        "step": 9,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 3,
+        "step": 10,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 6,
+        "step": 11,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "line": 7,
+        "step": 12,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 8
+        }
+      },
+      {
+        "line": 8,
+        "step": 13,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[8]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 14,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 8,
+        "step": 15,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[4]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 16,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 14
+        }
+      },
+      {
+        "line": 8,
+        "step": 17,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[14]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 18,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 8,
+        "step": 19,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[3]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 20,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 8,
+        "step": 21,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[2]": 1
+        }
+      },
+      {
+        "line": 7,
+        "step": 22,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 8,
+        "step": 23,
+        "action": "EXECUTE",
+        "vars": {
+          "buckets[1]": 1
+        }
+      },
+      {
+        "line": 9,
+        "step": 24,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 0
+        }
+      },
+      {
+        "line": 10,
+        "step": 25,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 0
+        }
+      },
+      {
+        "line": 10,
+        "step": 26,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 1
+        }
+      },
+      {
+        "line": 11,
+        "step": 27,
+        "action": "EXECUTE",
+        "vars": {
+          "a": 0
+        }
+      },
+      {
+        "line": 12,
+        "step": 28,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[0]": 1
+        }
+      },
+      {
+        "line": 13,
+        "step": 29,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 1
+        }
+      },
+      {
+        "line": 10,
+        "step": 30,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 2
+        }
+      },
+      {
+        "line": 12,
+        "step": 31,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[1]": 2
+        }
+      },
+      {
+        "line": 13,
+        "step": 32,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 2
+        }
+      },
+      {
+        "line": 10,
+        "step": 33,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 3
+        }
+      },
+      {
+        "line": 12,
+        "step": 34,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[2]": 3
+        }
+      },
+      {
+        "line": 13,
+        "step": 35,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 3
+        }
+      },
+      {
+        "line": 10,
+        "step": 36,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 4
+        }
+      },
+      {
+        "line": 12,
+        "step": 37,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[3]": 4
+        }
+      },
+      {
+        "line": 13,
+        "step": 38,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 4
+        }
+      },
+      {
+        "line": 10,
+        "step": 39,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 5
+        }
+      },
+      {
+        "line": 10,
+        "step": 40,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 6
+        }
+      },
+      {
+        "line": 10,
+        "step": 41,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 7
+        }
+      },
+      {
+        "line": 10,
+        "step": 42,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 8
+        }
+      },
+      {
+        "line": 12,
+        "step": 43,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[4]": 8
+        }
+      },
+      {
+        "line": 13,
+        "step": 44,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 5
+        }
+      },
+      {
+        "line": 10,
+        "step": 45,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 9
+        }
+      },
+      {
+        "line": 10,
+        "step": 46,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 10
+        }
+      },
+      {
+        "line": 10,
+        "step": 47,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 11
+        }
+      },
+      {
+        "line": 10,
+        "step": 48,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 12
+        }
+      },
+      {
+        "line": 10,
+        "step": 49,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 13
+        }
+      },
+      {
+        "line": 10,
+        "step": 50,
+        "action": "EXECUTE",
+        "vars": {
+          "j": 14
+        }
+      },
+      {
+        "line": 12,
+        "step": 51,
+        "action": "EXECUTE",
+        "vars": {
+          "my_list[5]": 14
+        }
+      },
+      {
+        "line": 13,
+        "step": 52,
+        "action": "EXECUTE",
+        "vars": {
+          "i": 6
+        }
+      },
+      {
+        "line": 14,
+        "step": 53,
+        "action": "RETURN",
+        "vars": {
+          "__return__": [
+            1,
+            2,
+            3,
+            4,
+            8,
+            14
+          ]
+        }
+      }
+    ],
+    "id": 2,
+    "task_id": 54,
+    "exist_function": [
+      "counting_sort"
+    ]
+  }
+]

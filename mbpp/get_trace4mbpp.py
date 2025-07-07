@@ -6,10 +6,12 @@ import json
 import os
 
 if __name__ == "__main__":
-    # with open("mbpp_sample.json", "r", encoding="utf-8") as f:
+    curdir = os.path.dirname(os.path.abspath(__file__))
+
+    # with open(curdir + "/sample/mbpp_sample.json", "r", encoding="utf-8") as f:
     # with open("sanitized-mbpp.json", "r", encoding="utf-8") as f:
         # samples = json.load(f)
-    samples = load_jsonl("mbpp.jsonl")
+    samples = load_jsonl(curdir + "/data/mbpp.jsonl")
 
     results = []
     i = 0
@@ -44,11 +46,11 @@ if __name__ == "__main__":
             except Exception as e:
                 print(f"Error executing {sample_id}: {e}")
 
-    curdir = os.path.dirname(os.path.abspath(__file__))
     # 使用封装好的工具进行分批存储
     save_results_in_batches(
         results,
         output_dir= curdir + "/trace_result",
+        # output_dir= curdir + "/sample",
         output_prefix="trace_batch",
         batch_size=50
     )

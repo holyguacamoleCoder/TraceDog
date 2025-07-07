@@ -15,7 +15,7 @@ pending_vars = {}        # 当前帧的变量状态（用于 RETURN）
 trace_step = 1
 
 def is_serializable(val):
-    if isinstance(val, types.ModuleType) or isinstance(val, types.GeneratorType):  # 直接排除模块对象
+    if isinstance(val, (types.ModuleType, types.GeneratorType)):  # 直接排除模块对象
         return False
     try:
         json.dumps(val)
@@ -197,14 +197,16 @@ def trace_calls(frame, event, arg):
 
             # 构建发生变化的变量及其完整结构
             changed_vars = {}
-            for path in set(changed_paths):  # 去重
+            changed_paths = sorted(set(changed_paths), key=lambda x: x.count('.') + x.count('['), reverse=True)
+            for path in changed_paths:  # 去重
                 # print(f"Path: {path}")
                 value = get_nested_value(current_vars, path)
                 # print(f"Value: {value}")
                 if value is not None and is_serializable(value):
-                   is_subpath = any(k.startswith(path + '[') or k.startswith(path + '.') for k in changed_vars)
-                   if not is_subpath:
-                       changed_vars[path] = value
+                    is_subpath = any(k.startswith(path + '[') or k.startswith(path + '.') for k in changed_vars)
+                    if not is_subpath:
+                        changed_vars[path] = value
+                    # print(f"Changed_vars: {changed_vars}")
 
             if changed_vars:
                 trace_records.append({
