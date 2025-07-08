@@ -5,8 +5,6 @@ from _openai.call_api import call_openai_api
 # from _openai.checkpoint import load_checkpoint, save_checkpoint
 
 import os
-import json
-import random
 from concurrent.futures import ThreadPoolExecutor
 
 

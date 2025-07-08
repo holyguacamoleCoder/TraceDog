@@ -1,0 +1,5 @@
+{"code": "def f(nums):\n    output = []\n    for n in nums:\n        output.append((nums.count(n), n))\n    output.sort(reverse=True)\n    return output", "input": "[1, 1, 3, 1, 3, 1]", "output": "[(4, 1), (4, 1), (4, 1), (4, 1), (2, 3), (2, 3)]", "id": "sample_0"}
+{"code": "def f(str,toget):\n    if str.startswith(toget): return str[len(toget):]\n    else: return str", "input": "'fnuiyh', 'ni'", "output": "'fnuiyh'", "id": "sample_796"}
+{"code": "def f(dct):\n    lst = []\n    for key in sorted(dct):\n        lst.append((key, dct[key]))\n    return lst", "input": "{'a': 1, 'b': 2, 'c': 3}", "output": "[('a', 1), ('b', 2), ('c', 3)]", "id": "sample_797"}
+{"code": "def f(text, pre):\n    if not text.startswith(pre):\n        return text\n    return text.removeprefix(pre)", "input": "'@hihu@!', '@hihu'", "output": "'@!'", "id": "sample_798"}
+{"code": "def f(st):\n    if st[0] == '~':\n        e = st.rjust(10, 's')\n        return f(e)\n    else:\n        return st.rjust(10, 'n')", "input": "'eqe-;ew22'", "output": "'neqe-;ew22'", "id": "sample_799"}
