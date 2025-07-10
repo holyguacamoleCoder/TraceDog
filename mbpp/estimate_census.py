@@ -48,34 +48,51 @@ print("\n输出值类型分布:")
 for typ, count in output_counter.most_common():
     print(f" - {typ}: {count} 次")
 
-# 6. step 数量分布（每个 trace 中 step 的数量）
-step_counts = []
+# 6. step 最大编号分布（每个 trace 中最大的 step 值）
+def parse_step(step_val):
+    if isinstance(step_val, int):
+        return step_val
+    elif isinstance(step_val, str):
+        parts = step_val.split("->")
+        if len(parts) >= 1 and parts[0].isdigit():
+            return int(parts[0])
+    return None  # 或者返回 0 表示无效
+
+max_steps = []
 for sample in samples:
     traces = sample.get("traces", [])
-    steps_in_trace = [t.get("step") for t in traces if "step" in t]
-    step_counts.append(len(steps_in_trace))
+    steps_in_trace = [
+        parse_step(t.get("step"))
+        for t in traces
+        if "step" in t
+    ]
+    steps_in_trace = [s for s in steps_in_trace if s is not None]
 
-avg_steps = sum(step_counts) / total_samples if total_samples > 0 else 0
-max_steps = max(step_counts) if step_counts else 0
-min_steps = min(step_counts) if step_counts else 0
+    if steps_in_trace:
+        max_step = max(steps_in_trace)
+        max_steps.append(max_step)
+    else:
+        max_steps.append(0)  # 如果没有有效 step，记为 0
 
-print(f"\n平均 step 数量: {avg_steps:.2f}")
-print(f"最多 step 数量: {max_steps}")
-print(f"最少 step 数量: {min_steps}")
+avg_max_step = sum(max_steps) / total_samples if total_samples > 0 else 0
+min_max_step = min(max_steps) if max_steps else 0
+max_max_step = max(max_steps) if max_steps else 0
 
+print(f"\n平均最大 step 编号: {avg_max_step:.2f}")
+print(f"最小最大 step 编号: {min_max_step}")
+print(f"最大最大 step 编号: {max_max_step}")
 # 按区间分桶的 step 分布（例如每 10 步为一组）
-BUCKET_SIZE = 20
-
+BUCKET_SIZE_STEP = 20
 def get_step_bucket(step_count):
-    return (step_count // BUCKET_SIZE) * BUCKET_SIZE
+    return (step_count // BUCKET_SIZE_STEP) * BUCKET_SIZE_STEP
 
-bucketed_steps = [get_step_bucket(count) for count in step_counts]
-step_counter = Counter(bucketed_steps)
+bucketed_max_steps = [get_step_bucket(m) for m in max_steps]
+step_counter = Counter(bucketed_max_steps)
 
-print(f"\nstep 分布（每 {BUCKET_SIZE} 步为一个桶）:")
+print(f"\n最大 step 编号分布（每 {BUCKET_SIZE_STEP} 步一个区间）:")
 for bucket, count in sorted(step_counter.items()):
-    upper_bound = bucket + BUCKET_SIZE
-    print(f" - {bucket} ~ {upper_bound} steps: {count} 个")
+    upper_bound = bucket + BUCKET_SIZE_STEP
+    print(f" - {bucket} ~ {upper_bound}: {count} 个")
 
 
 
