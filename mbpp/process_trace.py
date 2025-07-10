@@ -23,9 +23,10 @@ def is_valid_sample(sample):
         return False
 
     # 5. 输出不能是 None 或无意义的默认值
-    output = sample.get("output")
-    if output is None or output in (0, "", [], {}):
-        return False
+    # 不合理的！！！没有理由这么做
+    # output = sample.get("output")
+    # if output is None or output in (0, "", [], {}):
+    #     return False
 
     # 6. 不是重复任务
     # 结合 task_id 去重，或结合 input/code 内容哈希去重
