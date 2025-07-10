@@ -1,73 +1,118 @@
-# Copyright (c) Meta Platforms, Inc. and affiliates.
-
 import json
-import argparse
-from concurrent.futures import ProcessPoolExecutor
-from utils_general import (
-    evaluate_score,
-    pass_at_k,
-)
+import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from tqdm import tqdm
+from datetime import datetime
+from cache import load_cache, save_cache
 
-def evaluate_generations(generations : dict[str, list], mode):
-    # Load the samples
-    dataset = [json.loads(l) for l in open("./data/cruxeval.jsonl", "r").readlines()]
-    references = [(doc["code"], doc["input"], doc["output"]) for doc in dataset]
+# 文件已经弃用！硬件条件原因，笔者使用LLaMAfactory进行生成
 
-    # Run the samples
+
+# 配置
+OLLAMA_URL = "http://localhost:11434/api/generate"
+MODEL_NAME = "trace-dogv1:latest"
+model_prefix = "trace-dogv1"
+# MODEL_NAME = "deepseek-coder"  # 替换为你的模型名
+MAX_WORKERS = 2                # 并发数（根据GPU显存调整）
+K = 1                          # Pass@k 的 k值
+TEMPERATURE = 0.3              # 温度（0.1~1.0）
+TOP_P = 0.9                    # 核采样
+TIMEOUT = 120                  # 请求超时（秒）
+ERROR_LOG = "./error/error_log.jsonl"   # 错误记录文件
+CACHE_FILE = "./cache/cache.json"
+
+# 加载数据
+def load_data(file_path):
+    with open(file_path, 'r') as f:
+        return [json.loads(line) for line in f]
+
+
+# 生成请求
+def generate(item, prompt, temperature=TEMPERATURE):
+    # 加载缓存
+    cache = load_cache()
+
+    # 构造缓存 key（可以加上 temperature）
+    cache_key = item["id"]
+
+    if cache_key in cache:
+        print(f"Using cached result for {cache_key}")
+        return cache[cache_key]
+    
     try:
-        generations_list = [generations[f"sample_{i}"] for i in range(len(dataset))]
-    except:
-        assert False, "check format of generations, should be dictionary of lists with keys of id's in the form sample_i"
-        
-    with ProcessPoolExecutor() as executor:
-        args_list = zip(generations_list, references, [mode] * len(generations_list))
-        results = executor.map(evaluate_score, args_list)
-    all_scores = list(results)
+        response = requests.post(
+            OLLAMA_URL,
+            json={
+                "model": MODEL_NAME,
+                "prompt": prompt,
+                "options": {
+                    "temperature": temperature,
+                    "top_p": TOP_P,
+                    "num_predict": 1024
+                },
+                "stream": False
+            },
+            timeout=TIMEOUT
+        )
+        # print(response.json())
+        print(f"Generated result for {cache_key}")
+        response.raise_for_status()
+        cache[cache_key] = response.json()["response"]
+        save_cache(cache)
+        return response.json()["response"].strip()
+    except Exception as e:
+        log_error({
+            "error": str(e),
+            "prompt": prompt[:200] + "..." if len(prompt) > 200 else prompt,
+            "timestamp": datetime.now().isoformat()
+        })
+        return None
 
-    # Compute pass@k scores
-    pass_at_1s, pass_at_5s = [], []
-    for execution_result in all_scores:
-        c, n = execution_result.count(True), len(execution_result)
-        pass_at_1s.append(pass_at_k(n, c, 1))
-        pass_at_5s.append(pass_at_k(n, c, 5))
+# 记录错误案例
+def log_error(error_data):
+    with open(ERROR_LOG, "a") as f:
+        f.write(json.dumps(error_data) + "\n")
 
-    return {"raw_generations": generations,
-            "raw_scored_generations": {f"sample_{i}": all_scores[i] for i in range(len(dataset))},
-            "pass_at_1": sum(pass_at_1s) / len(pass_at_1s) * 100,
-            "pass_at_5": sum(pass_at_5s) / len(pass_at_5s) * 100}
+# 构造提示模板
+def build_prompt(item):
+    return f"""Please reasoning about the following code according to input:
+Here is code: {item['code']}
+And input is: {item['input']}
+"""
+
+# 修改后的 evaluate 函数
+def exec_batch_generation(dataset, sample_count=100):
+    samples = dataset[:min(sample_count, len(dataset))]
+
+    results = []
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = []
+        for item in samples:
+            prompt = build_prompt(item)
+            for _ in range(K):  # K次生成任务
+                futures.append(executor.submit(generate, item, prompt, TEMPERATURE))
+
+        progress = tqdm(total=len(futures), desc="Generating")
+
+        for future in as_completed(futures):
+            generated_content = future.result()
+            results.append({
+                "id": future["id"],
+                "generated": generated_content,
+                "input": future["input"],
+                "expected_output": future["output"],
+                # "output": generated_content,
+            })
+            progress.update(1)
+        progress.close()
+
+    # 仅保存生成内容
+    with open(f"./generations/{model_prefix}_t{TEMPERATURE}.json", "w") as f:
+        json.dump(results, f, indent=2)
+
+    print(f"\n模型生成内容已保存至 ./generations/{model_prefix}_t{TEMPERATURE}.json")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--generations_path", 
-        help="JSON path containing outputs to evaluate. Should contain a list of \
-              length 800, where each element is a list of different generations \
-              for that benchmark sample.",
-        type=str,
-    )
-    parser.add_argument(
-        "--scored_results_path", 
-        help="path to dump scored results",
-        type=str,
-        default=None,
-    )
-    parser.add_argument(
-        "--mode", 
-        help="either input or output, depending on which one to evaluate",
-        type=str,
-        default=None,
-    )
-
-    args = parser.parse_args()
-    generations = json.load(open(args.generations_path, "r"))
-    print(f"Scoring {args.generations_path}... expect around a minute")
-
-    if "input" in args.generations_path: args.mode = "input"
-    else: args.mode = "output"
-
-    results = evaluate_generations(generations, args.mode)
-    print(f"Finished!")
-    print("pass@1:", round(results["pass_at_1"], 1), "pass@5:", round(results["pass_at_5"], 1))
-    if args.scored_results_path != None:
-        print(f"Dumping to {args.scored_results_path}")
-        json.dump(results, open(args.scored_results_path, "w"))
+    dataset = load_data("./data/cruxeval.jsonl")
+    exec_batch_generation(dataset, sample_count=1000)

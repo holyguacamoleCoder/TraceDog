@@ -35,9 +35,11 @@ for nl_item in all_nl_samples:
         merged_item = {
             "id": item_id,
             # "code": trace_item.get("code", ""),
-            "instruction": f"please reasoning about the following code according to input: {code}",
-            "input": str(str(trace_item.get("input", [])).replace("\"", "\'")),
-            "output": str(str(trace_item.get("output", "")).replace("\"", "\'")) + "Here is analyze the code and output:\n" + nl,
+            "instruction": "Please reasoning about the following code according to input:",
+            "input": 
+              "Here is code: \n" + code + "\n" +
+              "And input is : \n" + str(str(trace_item.get("input", [])).replace("\"", "\'")),
+            "output": "OK, I will analyze the code:\n" + nl + " \n Above all ,The output is: " + str(str(trace_item.get("output", "")).replace("\"", "\'")),
             # "nl": nl_item.get("nl", "")
         }
         final_data.append(merged_item)
